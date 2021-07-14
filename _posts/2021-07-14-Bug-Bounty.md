@@ -14,7 +14,8 @@ Starrting out, This post in the series introduces basic concepts of HTTP Protoco
 
 Basically the protocol is a system of rules that defines how data is exchanged within or between computers.
 
-![](./assets/img/http.png)
+
+![](https://github.com/sahil-rawat/sahil-rawat.github.io/blob/master/assets/img/HTTP1.png?raw=true)
 
 So The HTTP protocol allows us to fetch or send resources from or to the server, In Smple terms It is a pre defined set of rules that need to be followed while communicating with the server, for exapmle if we want to fetch data we need to initiate a GET request, and the format of this request is predefined which we need to follow while sending this request.
 
