@@ -3,7 +3,6 @@ title: About
 icon: fas fa-info
 order: 4
 ---
-
 My name is Sahil I'm B.Tech CSE student specializing in CyberSecurity.
 
 My main focus lies in the areas of Web Application Security, Network Penetration Testing, and Red Team Exercises, I'm passionate about computer security and am mostly self-taught in the area.
