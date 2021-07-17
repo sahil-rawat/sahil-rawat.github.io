@@ -1,6 +1,6 @@
 ---
 title: Burp Suite:A Step-By-Step Guide
-date: 2021-07-03 12:04:00 +0530
+date: 2021-07-03 13:37:00 +0530
 categories: [BugBounty,Web]
 tags: [web]
 ---

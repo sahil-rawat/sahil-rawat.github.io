@@ -1,6 +1,6 @@
 ---
 title: A guide to Open Redirect
-date: 2021-07-04 12:04:00 +0530
+date: 2021-07-04 13:33:37 +0530
 categories: [BugBounty,Web]
 tags: [web]
 ---
