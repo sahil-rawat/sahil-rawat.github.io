@@ -10,7 +10,7 @@ Myself Sahil Singh Rawat I am from India and currently pursuing my B.Tech Comput
 
 I am passionate about Cybersecurity and looking forward to exploring new topics in the Cybersecurity domain, My main focus lies in the areas of Web Application Security, and Network Penetration Testing, and Red Teaming Exercises, I'm passionate about computer security and am mostly self-taught in the area, apart from it I am a Web developer and also interested in bug bounty hunting.
 
-I actively participate in various hackathons, CTFs and I am also an active player [@hackthebox](https://www.hackthebox.eu/home/users/profile/303406) with rank Hacker and [@tryhackme](https://tryhackme.com/p/sahilrawat) with rank Guru
+I actively participate in various hackathons, CTFs and I am also an active player [@hackthebox](https://www.hackthebox.eu/home/users/profile/303406) with rank Pro Hacker and [@tryhackme](https://tryhackme.com/p/sahilrawat) with rank Guru
 
 [![sahilrawat](https://tryhackme-badges.s3.amazonaws.com/sahilrawat.png)](https://tryhackme.com/p/sahilrawat)        [![jhnwick](https://www.hackthebox.eu/badge/image/303406)](https://www.hackthebox.eu/home/users/profile/303406)
 

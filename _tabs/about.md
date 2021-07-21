@@ -1,14 +1,16 @@
 ---
-title: Disclaimer
-icon: fas fa-warning
+title: About
+icon: fas fa-info
 order: 4
 ---
-All the blog posts and tutorials are for informational and educational purposes only. The tutorials provided on www.sahilsinghrawat.in are only for those who are interested to learn about Ethical Hacking, Cyber Security, and Penetration Testing. 
+My name is Sahil I'm B.Tech CSE student specializing in CyberSecurity.
 
-All tutorials have been made using our own routers, servers, websites, and other resources, they do not contain any illegal activity. We do not promote, encourage, support, or excite any illegal activity or hacking without written permission in general. We want to raise security awareness and inform our readers on how to prevent themselves from being a victim of hackers. If you plan to use the information for illegal purposes, please leave this website now. We cannot be held responsible for any misuse of the given information.
+My main focus lies in the areas of Web Application Security, Network Penetration Testing, and Red Team Exercises, I'm passionate about computer security and am mostly self-taught in the area.
 
-The misuse of the information on this website can result in criminal charges brought against the persons in question. The authors and www.sahilsinghrawat.in will not be held responsible in the event any criminal charges be brought against any individuals misusing the information in this website to break the law.
+I actively participate in various hackathons, CTFs and I am also an active player [@hackthebox](https://www.hackthebox.eu/home/users/profile/303406) with rank Pro Hacker and [@tryhackme](https://tryhackme.com/p/sahilrawat) with rank Guru
 
-You shall not misuse the information to gain unauthorized access. However, you may try out these hacks on your own computer at your own risk. Performing hack attempts (without permission) on computers that you do not own is illegal.
+[![sahilrawat](https://tryhackme-badges.s3.amazonaws.com/sahilrawat.png)](https://tryhackme.com/p/sahilrawat)        [![jhnwick](https://www.hackthebox.eu/badge/image/303406)](https://www.hackthebox.eu/home/users/profile/303406)
 
-We believe only in White Hat Hacking. On the other hand, we condemn Black Hat Hacking.
+I will document here my learning experiences, challenges, projects, or just research in my spare time. These posts will also help me in learning the topics throughly. I hope you enjoy the posts and hopefully learn something new. Also, feedback is much appreciated!
+
+You can reach out to me at [sahil@sahilsinghrawat.in](mailto:sahil@sahilsinghrawat.in) or ping me at twitter [sahil_s_rawat](https://twitter.com/sahil_s_rawat)
