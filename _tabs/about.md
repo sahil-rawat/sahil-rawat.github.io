@@ -1,7 +1,7 @@
 ---
 title: About
 icon: fas fa-info
-order: 4
+order: 1
 ---
 My name is Sahil I'm B.Tech CSE student specializing in CyberSecurity.
 

@@ -20,8 +20,7 @@ title: Sahil Rawat                         # the main title
 tagline: CyberSecurity   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  Personal website as a Portfolio,
-  And a Personal blog.
+  Personal Blog on CyberSecurity & Portfolio website.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: 'https://www.sahilsinghrawat.in'
@@ -32,7 +31,7 @@ github:
 twitter:
   username: sahil_s_rawat
 
-  linkedin:
+linkedin:
   username: sahil-singh-rawat            # change to your twitter username
 
 social:
@@ -114,7 +113,7 @@ defaults:
       type: posts
     values:
       layout: post
-      comments: true    # Enable comments in posts.
+      comments: false    # Enable comments in posts.
       toc: true         # Display TOC column in posts.
       # DO NOT modify the following parameter unless you are confident enough
       # to update the code of all other post links in this project.
@@ -157,10 +156,14 @@ exclude:
   - '*.json'
 
 jekyll-archives:
-  enabled: [categories, tags]
+  enabled: [categories, tags,portfolio]
   layouts:
     category: category
     tag: tag
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
+    
+
+plugins:
+  - jekyll-redirect-from

@@ -1,7 +1,7 @@
 ---
 title: Disclaimer
 icon: fas fa-warning
-order: 4
+order: 5
 ---
 All the blog posts and tutorials are for informational and educational purposes only. The tutorials provided on www.sahilsinghrawat.in are only for those who are interested to learn about Ethical Hacking, Cyber Security, and Penetration Testing. 
 
