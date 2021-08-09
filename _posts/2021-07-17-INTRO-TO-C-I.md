@@ -1,7 +1,7 @@
 ---
-title: "Intro To C : Part I"
+title: "Intro To C : Part I (Introduction)"
 date: 2021-07-17 13:39:50 +0530
-categories: [Languages,ReverseEngineering]
+categories: [Languages,C]
 tags: [Languages]
 ---
 

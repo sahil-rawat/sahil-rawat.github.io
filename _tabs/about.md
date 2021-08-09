@@ -11,7 +11,7 @@ My main focus lies in the areas of Web Application Security, Network Penetration
 
 I actively participate in various hackathons, CTFs and I am also an active player [@hackthebox](https://www.hackthebox.eu/home/users/profile/303406) with rank Pro Hacker and [@tryhackme](https://tryhackme.com/p/sahilrawat) with rank Guru
 
-[![sahilrawat](https://tryhackme-badges.s3.amazonaws.com/sahilrawat.png)](https://tryhackme.com/p/sahilrawat)        [![jhnwick](https://www.hackthebox.eu/badge/image/303406)](https://www.hackthebox.eu/home/users/profile/303406) <script src="https://www.hackthebox.eu/badge/303406"></script>
+[![sahilrawat](https://tryhackme-badges.s3.amazonaws.com/sahilrawat.png)](https://tryhackme.com/p/sahilrawat)<script src="https://www.hackthebox.eu/badge/303406"></script>
 
 I will document here my learning experiences, challenges, projects, or just research in my spare time. These posts will also help me in learning the topics throughly. I hope you enjoy the posts and hopefully learn something new. Also, feedback is much appreciated!
 

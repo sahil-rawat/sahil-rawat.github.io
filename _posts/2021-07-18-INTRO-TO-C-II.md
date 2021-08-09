@@ -1,7 +1,7 @@
 ---
-title: "Intro To C : Part II"
+title: "Intro To C : Part II (Variables)"
 date: 2021-07-18 13:39:50 +0530
-categories: [Languages,ReverseEngineering]
+categories: [Languages,C]
 tags: [Languages]
 ---
 This is the second post in the series [Intro To C](https://www.sahilsinghrawat.in/posts/INTRO-TO-C-I/) In the last post we introduced C language while going through a demo HelloWorld program and how to compile and build a C program.
@@ -32,6 +32,7 @@ Depending on which languages you already work with, you might or might not be fa
 Some example types:
 
 |Type|Example|C Type|
+|-|-|-|
 |Integer|3410, 123, -1|int|
 |Floating Point|1.2, 3.14, -11.345|float|
 |Character(Single)|'a', 's', '$'|char|
