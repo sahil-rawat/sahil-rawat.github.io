@@ -14,7 +14,7 @@ This post in the series introduces basic concepts of HTTP Protocol.
 
 The protocol is a system of rules that defines how data is exchanged within or between computers.
 
-![](https://i.ibb.co/W629Fr2/HTTP-2.png)
+![](https://github.com/sahil-rawat/assets/blob/master/IMG/HTTP_WWW_INTRO.png?raw=true)
 
 So The HTTP protocol allows us to fetch or send resources from or to the server,In Simple terms, It is a pre-defined set of rules that need to be followed while communicating with the server, for example, if we want to fetch data we need to initiate a GET request, and the format of this request is pre-defined which we need to follow while sending this request.
 
@@ -107,7 +107,7 @@ If you want to explore more about how these HTTP requests are made and about var
 
 The built-in functionality of chrome dev tools in chrome browser is a great tool and used by many bug bounty hunters, This tool helps in breaking down every request made to the server when we visit a website or click a button.
 
-![](https://i.ibb.co/bstS5N7/ezgif-com-gif-maker.gif)
+![](https://github.com/sahil-rawat/assets/blob/master/IMG/HTTP_WWW_DEVTOOL.gif?raw=true)
 
 The usage is simple to open the website in a chrome browser then open the dev tools either right-click and then select *inspect* or use the shortcut key for Windows: *Ctrl+Shift+J* and Mac: *Cmd+ Opt+J*
 
@@ -121,4 +121,4 @@ For using it we need to change the proxy setting in the browser and add a proxy 
 
 here as we can see that the GET request is logged into the burp suite before going to the server.
 
-![](https://i.ibb.co/JzQvZgZ/burp.png)
+![](https://github.com/sahil-rawat/assets/blob/master/IMG/HTTP_WWW_BURP.png?raw=true)

@@ -148,7 +148,7 @@ It will start the Packet sniffer and shows information about wifi networks aroun
 
 The program outputs the details about the network in the first section and the second section, all the clients/devices connected to the network are shown.
 
-![](https://i.ibb.co/VBwbBZK/Screenshot-2021-07-17-at-20-31-54.png)
+![](https://github.com/sahil-rawat/assets/blob/master/IMG/NET_HACKING_I_AIRDUMP.png?raw=true)
 
 Now breaking down each column of the output of the above command as shown in the image:
 

@@ -43,7 +43,7 @@ This is a quick scan and also shows the operating system of the discovered devic
 
 In a MITM attack, the hacker would be able to place himself in the middle of the connection and be able to intercept see and modify anything transferring between devices.
 
-![](https://i.ibb.co/Lh4PSNw/mitm.png)
+![](https://github.com/sahil-rawat/assets/blob/master/IMG/NET_HACKING_III_MITM.png?raw=true)
 
 As we can see that all the data/communication transferring between the client and router is going via the attacker's machine
 
