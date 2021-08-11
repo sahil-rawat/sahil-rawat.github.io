@@ -10,12 +10,12 @@ In this post, we will learn about Variables and Statements in the C language
 
 ## Variable and statements
 
-It’s said that "variables hold values". But another way to think about it is that a variable is a human-readable name that refers to some data in memory.
+It’s said that “variables hold values”. But another way to think about it is that a variable is a human-readable name that refers to some data in memory.
 
-You can think of memory as a big array of bytes, Data is stored in this "array". If the data to be stored is larger than a single byte, it is stored in multiple bytes.
+You can think of memory as a big array of bytes, Data is stored in this “array”. If the data to be stored is larger than a single byte, it is stored in multiple bytes.
 Because memory is like an array, each byte of memory can be referred to by its index. This index into memory is also called an *address*, or a *location*, or a *pointer*.
 
-When you have a variable in C, the value of that variable is in memory *somewhere*, at some address. But it’s a pain to refer to a value by its numeric address because the address is somewhat `"0x7ffda2546fc4"` and remembering it is difficult but if we could reference the same by a string like `name = "sahil"` that would be easier, so we make a name for it instead, and that’s what the variable is.
+When you have a variable in C, the value of that variable is in memory *somewhere*, at some address. But it’s a pain to refer to a value by its numeric address because the address is somewhat `“0x7ffda2546fc4”` and remembering it is difficult but if we could reference the same by a string like `name = “sahil”` that would be easier, so we make a name for it instead, and that’s what the variable is.
 
 So a variable is a name for some data that are stored in memory at some address.
 
@@ -36,13 +36,13 @@ Some example types:
 |Integer|3410, 123, -1|int|
 |Floating Point|1.2, 3.14, -11.345|float|
 |Character(Single)|'a', 's', '$'|char|
-|Stirng|"Hello World!"|char|
+|Stirng|“Hello World!”|char|
 
 C makes an effort to convert automatically between most numeric types when you ask it to. But other than that, all conversions are manual, notably between string and numeric.
 
 Almost all of the types in C are variants of these types. Before using a variable, we have to *declare* that variable and tell C what type the variable holds. Once we declared, the type of a variable we cannot change it later at runtime. What you set it to is what it is until it falls out of scope.
 
-Let’s take our previous ["HelloWorld"](https://www.sahilsinghrawat.in/posts/INTRO-TO-C-I/) code from last post and add a couple variables to it:
+Let’s take our previous [“HelloWorld”](https://www.sahilsinghrawat.in/posts/INTRO-TO-C-I/) code from last post and add a couple variables to it:
 
 ```c
 #include <stdio.h>
@@ -59,7 +59,7 @@ We’ve declared a couple of variables. We haven’t used them yet, and they’r
 
 Uninitialized variables have indeterminate values. They have to be initialized or else you must assume they contain some nonsense number.
 
-This is one of the places C can "get you". Much of the time, the indeterminate value is zero... but it can vary from run to run! Never assume the value will be zero, even if you see it is. *Always* explicitly initialize variables to some value before you use them!
+This is one of the places C can “get you”. Much of the time, the indeterminate value is zero... but it can vary from run to run! Never assume the value will be zero, even if you see it is. *Always* explicitly initialize variables to some value before you use them!
 
 Let’s go ahead and do that:
 
@@ -100,7 +100,7 @@ Hello, world! i = 2 and f = 3.14!
 
 In this way, printf() might be similar to various types of format or parameterized strings in other languages you’re familiar with.
 
-Historically, C didn’t have a Boolean type, In C, 0 means "false", and non-zero means "true". So 1 is true. And 37 is true. And 0 is false. You can just declare Boolean types as ints:
+Historically, C didn’t have a Boolean type, In C, 0 means “false”, and non-zero means “true”. So 1 is true. And 37 is true. And 0 is false. You can just declare Boolean types as ints:
 
 ```c
 int x = 1;

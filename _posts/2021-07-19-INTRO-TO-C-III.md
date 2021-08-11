@@ -32,7 +32,7 @@ printf("%zu", sizeof (2 + 7)); // Prints 4 on my system
 printf("%zu", sizeof 3.14);    // Prints 8 on my system
 ```
 
-Remember: it’s the size in bytes of the *type* of the expression, not the size of the expression itself. That’s why the size of 2+7 is the same as the size of variable "a" they’re both type int. Also, you can simply use the sizeof operator to find the bytes that a particular data type uses in memory
+Remember: it’s the size in bytes of the *type* of the expression, not the size of the expression itself. That’s why the size of 2+7 is the same as the size of variable “a” they’re both type int. Also, you can simply use the sizeof operator to find the bytes that a particular data type uses in memory
 
 ```c
 printf("%zu", sizeof(int));  // Prints 4 on my system
@@ -63,7 +63,7 @@ i/=2; // Same as "i=i/2"
 i%=5; // Same as "i=i%5"
 ```
 
-There is no exponentiation. You’ll have to use one of the pow() function variants from **"math.h"**. Let’s get into some of the weirder stuff you might not have in your other languages!
+There is no exponentiation. You’ll have to use one of the pow() function variants from **“math.h”**. Let’s get into some of the weirder stuff you might not have in your other languages!
 
 ### Ternary Operator
 
@@ -98,7 +98,7 @@ printf("The number %d is %s.\n", x, x % 2 == 0?"even": "odd")
 
 ```
 
-The %s format specifier in printf() means to print a string. If the expression x % 2 evaluates to 0, the value of the entire ternary expression evaluates to the string "even". Otherwise, it evaluates to the string "odd".
+The %s format specifier in printf() means to print a string. If the expression x % 2 evaluates to 0, the value of the entire ternary expression evaluates to the string “even”. Otherwise, it evaluates to the string “odd”.
 
 It’s important to note that the ternary operator isn’t flow control like the if statement is. It’s just an expression that evaluates to a value.
 
@@ -175,7 +175,7 @@ a <= b;  // True if a is less than or equal to b
 a >= b;  // True if a is greater than or equal to b
 ```
 
-Don’t mix up assignment **"="** with comparison **"=="** Use two equals to compare, one to assign.
+Don’t mix up assignment **“=”** with comparison **“==”** Use two equals to compare, one to assign.
 We can use the comparison expressions with if statements:
 
 ```c
@@ -190,9 +190,9 @@ We can chain together or alter conditional expressions with Boolean operators fo
 
 |Operator|Meaning|
 |-|-|
-|"&&"|and|
-|"\|\|"|or|
-|"!"|not|
+|“&&”|and|
+|“\|\|”|or|
+|“!”|not|
 
 ```c
 // An example of Boolean "and":

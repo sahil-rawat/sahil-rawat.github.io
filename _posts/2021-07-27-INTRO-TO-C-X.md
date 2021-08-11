@@ -16,7 +16,7 @@ We've already seen a couple of examples of I/O with scanf() and printf() for doi
 
 When we do any kind of I/O in C, we do so through a piece of data that you get in the form of a FILE* type. This FILE* holds all the information needed to communicate with the I/O subsystem about which file you have open, where you are in the file, and so on.
 
-The spec refers to these as *streams*, i.e. a stream of data from a file or any source. I'm going to use "files" and "streams" interchangeably, but you should think of a "file" as a special case of a "stream". There are other ways to stream data into a program than just reading from a file.
+The spec refers to these as *streams*, i.e. a stream of data from a file or any source. I'm going to use “files” and “streams” interchangeably, but you should think of a “file” as a special case of a “stream”. There are other ways to stream data into a program than just reading from a file.
 
 We'll see in a moment how to go from having a filename to getting an open FILE* for it, but first I want to mention three streams that are already open for you and ready for use.
 
@@ -200,7 +200,7 @@ humpback whale, 30 tonnes, 16.0 meters
 
 In much the same way we can use fgetc(), fgets(), and fscanf() to read text streams, we can use fputc(), fputs(), and fprintf() to write text streams.
 
-To do so, we have to fopen() the file in write mode by passing "w" as the second argument. Opening an existing file in "w" mode will instantly truncate that file to 0 bytes for a full overwrite.
+To do so, we have to fopen() the file in write mode by passing “w” as the second argument. Opening an existing file in “w” mode will instantly truncate that file to 0 bytes for a full overwrite.
 
 We'll put together a simple program that outputs a file output.txt using a variety of output functions.
 
@@ -238,7 +238,7 @@ So far we've just been talking text files. But there's another type of files we 
 
 These work very similarly to text files, except the I/O subsystem doesn't perform any translations on the data like it might with a text file. With binary files, you get a raw stream of bytes, and that's all.
 
-The big difference in opening the file is that you have to add a "b" to the mode. That is, to read a binary file, open it in "rb" mode. To write a file, open it in "wb" mode.
+The big difference in opening the file is that you have to add a “b” to the mode. That is, to read a binary file, open it in “rb” mode. To write a file, open it in “wb” mode.
 
 Because it's streams of bytes, and streams of bytes can contain NUL characters, and the NUL character is the end-of-string marker in C, people rarely use the fprintf() functions to operate on binary files.
 
@@ -267,7 +267,7 @@ int main(void)
     }
 ```
 
-Those two middle arguments to fwrite() are pretty odd. But basically what we want to tell the function is, "We have items that are *this* big, and we want to write *that* many of them." This makes it convenient if you have a record of a fixed length, and you have a bunch of them in an array. You can just tell it the size of one record and how many to write.
+Those two middle arguments to fwrite() are pretty odd. But basically what we want to tell the function is, “We have items that are *this* big, and we want to write *that* many of them.” This makes it convenient if you have a record of a fixed length, and you have a bunch of them in an array. You can just tell it the size of one record and how many to write.
 
 In the example above, we tell it each record is the size of a char, and we have 6 of them as computed by sizeof bytes.
 
@@ -277,7 +277,7 @@ If I run it through a hex dump program, we can see the output as bytes:
 
 And those values in hex do match up to the values (in decimal) that we wrote out.
 
-But now let's try to read them back in with a different program. This one will open the file for binary reading ("rb" mode) and will read the bytes one at a time in a loop.
+But now let's try to read them back in with a different program. This one will open the file for binary reading (“rb” mode) and will read the bytes one at a time in a loop.
 
 fread() has the neat feature where it returns the number of bytes read or 0 on EOF. So we can loop until we see that, printing numbers as we go.
 

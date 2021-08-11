@@ -59,7 +59,7 @@ Remember from early on that memory is like a big array, where a byte is stored a
 
 So a point is an index into memory, somewhere.
 
-For a random example, say that a number 3490 was stored at address ("index") `23,237,489,202`. If we have an int pointer to that 3490, that value of that pointer is `23,237,489,202`... because the pointer is the memory address. Different words for the same thing.
+For a random example, say that a number 3490 was stored at address (“index”) `23,237,489,202`. If we have an int pointer to that 3490, that value of that pointer is `23,237,489,202`... because the pointer is the memory address. Different words for the same thing.
 
 And now let’s say we have another number, 4096, stored right after the 3490 at address `23,237,489,210` (8 higher than the 3490 because each int in this example is 8 bytes long).
 

@@ -158,7 +158,7 @@ We will send only 4 packets this time so that the client disconnects and connect
 
 We captured the handshakes now we would use this to crack the password.
 
-#### Creating Wordlist**
+#### Creating Wordlist
 
 We will use the tool called crunch to create a wordlist for our attack.
 

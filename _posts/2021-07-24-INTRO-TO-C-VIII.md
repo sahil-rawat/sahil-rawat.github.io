@@ -26,7 +26,7 @@ Examples:
 
 The first one has a newline at the end quite a common thing to see.
 
-The last one has quotes embedded within it, but you see each is preceded by (we say "escaped by") a backslash (\) indicating that a literal quote belongs in the string at this point. This is how the C compiler can tell the difference between printing a double quote and the double quote at the end of the string.
+The last one has quotes embedded within it, but you see each is preceded by (we say “escaped by”) a backslash (\) indicating that a literal quote belongs in the string at this point. This is how the C compiler can tell the difference between printing a double quote and the double quote at the end of the string.
 
 ### String Variables
 
@@ -36,7 +36,7 @@ Now that we know how to make a constant string, let’s assign it to a variable 
  char *s = "Hello, world!";
 ```
 
-Check out that type: pointer to a char. The string variable s is a pointer to the first character in that string, namely the H. And we can print it with the %s (for "string") format specifier:
+Check out that type: pointer to a char. The string variable s is a pointer to the first character in that string, namely the H. And we can print it with the %s (for “string”) format specifier:
 
 ```c
 char *s = "Hello, world!";
@@ -153,7 +153,7 @@ When you’re making a new language, you have two options for storing a string i
 
 If you want strings longer than 255 characters, option 1 requires at least two bytes to store the length. Whereas option 2 only requires one byte to terminate the string. So a bit of saving there.
 
-In C, a "string" is defined by two basic characteristics:
+In C, a “string” is defined by two basic characteristics:
 
 - A pointer to the first character in the string.
 - A zero-valued byte (or NULL character) somewhere in memory after the pointer that indicates the end of the string

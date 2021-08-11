@@ -81,7 +81,7 @@ int main(void)
 
 You might somewhat sensibly think that the value of i after the call would be 11, since that’s what the ++ does, right? This would be incorrect. What is  happening here?
 
-Well, when you pass i to the increment() function, a copy gets made on the stack, right? It’s the copy that increment() works on, not the original; the original i is unaffected. We even gave the copy a name "a", It’s right there in the parameter list of the function definition. So we increment "a", sure enough, but what good does that do us out in main()? 
+Well, when you pass i to the increment() function, a copy gets made on the stack, right? It’s the copy that increment() works on, not the original; the original i is unaffected. We even gave the copy a name “a”, It’s right there in the parameter list of the function definition. So we increment “a”, sure enough, but what good does that do us out in main()? 
 
 That’s why in the previous example with the plus_1337() function, we returned the locally modified value so that we could see it again in main(). Seems a little bit restrictive, Like you can only get one piece of data back from a function, is what you’re thinking. 
 

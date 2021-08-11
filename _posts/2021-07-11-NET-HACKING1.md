@@ -173,7 +173,7 @@ By default ```airodump-ng``` sniffs only on 2.4 GHz, but if the wireless adapter
 ```bash
 airodump-ng --band a wlan0
 ```
-the *--band* argument is used to specify the band we need to sniff on, band "a" uses 5GHz thus we specified 5GHz we can specify various bands together ex:
+the *--band* argument is used to specify the band we need to sniff on, band “a” uses 5GHz thus we specified 5GHz we can specify various bands together ex:
 
 ```bash
 airodump-ng --band abg wlan0
@@ -192,7 +192,7 @@ We can perform this by typing
 airodump-ng --bssid <MAC:OF:ROUTER> --channel <Ch. Num> --write <filename> wlan0mon
 ```
 
-Here *--bssid* option is used to specify the network's MAC address, by *--channel* we specify the channel number, and then we are saving the output using the *--write* parameter and providing a filename to write to, and lastly, we need to specify the interface name "wlan0mon" in our case
+Here *--bssid* option is used to specify the network's MAC address, by *--channel* we specify the channel number, and then we are saving the output using the *--write* parameter and providing a filename to write to, and lastly, we need to specify the interface name “wlan0mon” in our case
 
 
 We selected the *--write* option so the program will create output file in different extension for us mainly .csv .netxm and .cap formats.

@@ -10,7 +10,7 @@ In this post, we will learn about Arrays
 
 ## Arrays
 
-Luckily, C has arrays. It's considered a low-level language but it does at least have the concept of arrays built-in. And since a great many languages drew inspiration from C's syntax, you're probably already familiar with using "[" and "]" for declaring and using arrays in C.
+Luckily, C has arrays. It's considered a low-level language but it does at least have the concept of arrays built-in. And since a great many languages drew inspiration from C's syntax, you're probably already familiar with using “[” and “]” for declaring and using arrays in C.
 
 But only barely! As we'll find out later, arrays are all pointers and stuff deep down. But for now, let's just use them as arrays.
 
@@ -79,7 +79,7 @@ void foo(int x[12])
 
 ```
 
-This is because when you "pass" arrays to functions, you're only passing a pointer to the first element, and that's what sizeof measures. 
+This is because when you “pass” arrays to functions, you're only passing a pointer to the first element, and that's what sizeof measures. 
 
 ### Array Initializers
 

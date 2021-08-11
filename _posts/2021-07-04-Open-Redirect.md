@@ -36,7 +36,7 @@ Sometimes an application may have some security measures in place where the deve
 
 In this example, the developers tried to implement a Filtering or Validation mechanism where they defined the list of trusted resources, and the server is checking that the next parameter's value contains a trusted domain or not from the list for example *mysite* is in their trusted resources list however *evilsite* is not, thus the 1st request is allowed but the second is not.
 
-But there is a flaw in this validation technique that is a web application is expecting *mysite* in someplace in the link so if someone types *mysite* after the "?" it works or in some cases mysite.evilsite.com works as well thus we need to try different variations to bypass the filter.
+But there is a flaw in this validation technique that is a web application is expecting *mysite* in someplace in the link so if someone types *mysite* after the “?” it works or in some cases mysite.evilsite.com works as well thus we need to try different variations to bypass the filter.
 
 Bypassing a filter is not as easy always, we need to fuzz the value to find what works for us. Below are some examples of how an open redirect could be exploited,
 
@@ -48,6 +48,6 @@ This URL redirects the user to *home.examplesite.com*, any user can replace the 
 
 ## *```Ex2: http://examplesite.com/?redirect=http://home.examplesite.com```*
 
-In this scenario, there is a filter in place which is not allowing us to redirect to any host other than the trusted one, so we need to try to find different variations that could work, so here the filter is looking for complete string "home.examplesite.com"
+In this scenario, there is a filter in place which is not allowing us to redirect to any host other than the trusted one, so we need to try to find different variations that could work, so here the filter is looking for complete string “home.examplesite.com”
 
-There is a way to Bypass this every browser has functionality that if we would type, any domain and a "@" and then the website we want to go to after it then the  browser will redirect to the website after "@", you can try it by typing in your browser or click on the link *[http://www.anydomain.com@www.sahilsinghrawat.in](http://www.google.com@www.sahilsinghrawat.in)* you will be redirected to my website, Following this, we could redirect the user by a link like *http://examplesite.com/?redirect=http://home.examplesite.com@www.sahilsinghrawat.in*
+There is a way to Bypass this every browser has functionality that if we would type, any domain and a “@” and then the website we want to go to after it then the  browser will redirect to the website after “@”, you can try it by typing in your browser or click on the link *[http://www.anydomain.com@www.sahilsinghrawat.in](http://www.google.com@www.sahilsinghrawat.in)* you will be redirected to my website, Following this, we could redirect the user by a link like *http://examplesite.com/?redirect=http://home.examplesite.com@www.sahilsinghrawat.in*

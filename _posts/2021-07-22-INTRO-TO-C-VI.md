@@ -34,7 +34,7 @@ They are the address of data. Just like an int variable can hold the value 12, a
 
 So if we have an int, say, and we want a pointer to it, what we want is some way to get the address of that int, right? After all, the pointer just holds the *address of* the data. What operator do you suppose we'd use to find the *address of* the int?
 
-We use the address-of operator (which happens to be an ampersand: "&") to find the address of the data.
+We use the address-of operator (which happens to be an ampersand: “&”) to find the address of the data.
 
 So for a quick example, we'll introduce a new *format specifier* for printf() so you can print a pointer. You know already how %d prints a decimal integer, yes? 
 
@@ -97,11 +97,11 @@ let's introduce you to the anti-address-of, operator.
 
 ### Dereferencing
 
-A pointer variable can be thought of as *referring* to another variable by pointing to it. You'll rarely hear anyone in C land talking about "referring" or "references", but I bring it up just so that the name of this operator will make a little more sense.
+A pointer variable can be thought of as *referring* to another variable by pointing to it. You'll rarely hear anyone in C land talking about “referring” or “references”, but I bring it up just so that the name of this operator will make a little more sense.
 
-When you have a pointer to a variable (roughly "a reference to a variable"), you can use the original variable through the pointer by *dereferencing* the pointer. (You can think of this as "depointering" the pointer, but no one ever says "depointering".)
+When you have a pointer to a variable (roughly “a reference to a variable”), you can use the original variable through the pointer by *dereferencing* the pointer. (You can think of this as “depointering” the pointer, but no one ever says “depointering”.)
 
-What do I mean by "get access to the original variable"? Well, if you have a variable called i, and you have a pointer to i called p, you can use the dereferenced pointer p *exactly as if it were the original variable i*
+What do I mean by “get access to the original variable”? Well, if you have a variable called i, and you have a pointer to i called p, you can use the dereferenced pointer p *exactly as if it were the original variable i*
 
 What is the dereference operator? It is the asterisk, again: *. Now, don't get this confused with the asterisk you used in the pointer declaration, earlier. They are the same character, but they have different meanings in different contexts.
 
@@ -181,7 +181,7 @@ printf("i is %d\n", i); // prints "11"!
 
 Pointer enthusiasts will recall from early on in the guide, we used a function to read from the keyboard, scanf().
 
-In Switch example, scanf("%d", &goat_count); 
+In Switch example, scanf(“%d”, &goat_count); 
 
 ...and, although you might not have recognized it at the time, we used the address-of to pass a pointer to a value to scanf(). We had to pass a pointer, see because scanf() reads from the keyboard (typically) and stores the result in a variable. The only way it can see that variable that is local to that calling function is if we pass a pointer to that variable:
 

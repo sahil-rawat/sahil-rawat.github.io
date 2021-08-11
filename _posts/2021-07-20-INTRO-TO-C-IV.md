@@ -136,7 +136,7 @@ printf("All done!\n");
 ```
 
 Notice that in both cases, the loop condition is false right away. So in the while, the loop fails, and
-the following block of code is never executed. With the do-while, however, the condition is checked *after* the block of code executes, so it always executes at least once. In this case, it prints the message, increments i, then the condition fails , and continues to the "All done!" output.
+the following block of code is never executed. With the do-while, however, the condition is checked *after* the block of code executes, so it always executes at least once. In this case, it prints the message, increments i, then the condition fails , and continues to the “All done!” output.
 
 The moral of the story is this: if you want the loop to execute at least once, no matter what the loop condition, use do-while.
 
