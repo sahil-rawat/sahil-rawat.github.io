@@ -6,7 +6,7 @@ tags: [Languages]
 ---
 This is the ninth post in the series [Intro To C](https://www.sahilsinghrawat.in/posts/INTRO-TO-C-I/) In the last post we learned Strings
 
-In this post, we will learn about Structs
+In this article, we will learn about Structs
 
 ## Structs
 
@@ -176,3 +176,17 @@ b = a; // Copy the struct*
 
 And returning a struct (as opposed to a pointer to one) from a function also makes a similar copy to the receiving variable.
 This is not a “deep copy”. All fields are copied as is, including pointers to things.
+
+---
+
+Thanks for Reading, Stay tuned for more ❤︎
+
+If you enjoyed reading the article do follow me on:
+
+[Twitter](https://twitter.com/sahil_s_rawat)
+
+[LinkedIn](https://www.linkedin.com/in/sahil-singh-rawat)
+
+[Website](https://www.sahilsinghrawat.in)
+
+[GitHub](https://github.com/sahil-rawat)

@@ -5,11 +5,9 @@ categories: [Penetration Testing,Networking]
 tags: [networking]
 ---
 
-# Network Hacking
-
 In this series, we will start with the basics of network hacking.
 
-A typical Network consists of various clients connected to share resources such as files, printers, and mostly INTERNET, etc. 
+A typical Network consists of various clients connected to share resources such as files, printers, and mostly 🌐 INTERNET, etc. 
 
 All networks whether be it wireless or wired works on the same principle, i.e they have a device that is considered as server ```for example router in home networks``` also referred to as Access Point, this Access Point is the only device that has access to the internet, none of the other clients have direct access to the resource they can only access the resource through the router or the Access Point.
 
@@ -75,7 +73,7 @@ If you need to randomly generate a MAC address you could do so by typing the fol
 openssl rand -hex 6 | sed 's/\(..\)/\1:/g; s/.$//'
 ```
 
-### Monitor Mode
+### Monitor Mode 🔍
 
 Within a Network, data are sent in packets, and the packet contains the source and destination MAC addresses, Thus by default, the device only receives the packets which have destination MAC as their own MAC, and rejects all other packets, But as packets are sent in the air any device within range can sniff these packets by changing the mode of Network card to Monitor Mode
 
@@ -217,3 +215,17 @@ We are not going to do this manually but are going to use a program ```aireplay-
 aireplay-ng --deauth <No. Of Packets> -a <MAC:OF:ROUTER> -c >MAC:OF:CLIENT> wlan0
 ``` 
 Here we used *--deauth* option to specify that we are using deauth attack and sending a very large no. of deauth packets by specifying 10000000 ensuring that the client gets disconnected for a long time then *-a* option takes the MAC address of the router and *-c* for MAC address of Client, to disconnect all the clients remove the -c option.
+
+---
+
+Thanks for Reading, Stay tuned for more ❤︎
+
+If you enjoyed reading the article do follow me on:
+
+[Twitter](https://twitter.com/sahil_s_rawat)
+
+[LinkedIn](https://www.linkedin.com/in/sahil-singh-rawat)
+
+[Website](https://www.sahilsinghrawat.in)
+
+[GitHub](https://github.com/sahil-rawat)

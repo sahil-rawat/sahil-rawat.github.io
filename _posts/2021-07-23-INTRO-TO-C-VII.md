@@ -6,7 +6,7 @@ tags: [Languages]
 ---
 This is the seventh post in the series [Intro To C](https://www.sahilsinghrawat.in/posts/INTRO-TO-C-I/) In the last post we learned Pointers
 
-In this post, we will learn about Arrays
+In this article, we will learn about Arrays
 
 ## Arrays
 
@@ -250,3 +250,17 @@ p = a; // p points to the array, but much nicer-looking!
 ```
 
 Just referring to the array name in isolation is the same as getting a pointer to the first element of the array! We're going to use this extensively in the upcoming examples.
+
+---
+
+Thanks for Reading, Stay tuned for more ❤︎
+
+If you enjoyed reading the article do follow me on:
+
+[Twitter](https://twitter.com/sahil_s_rawat)
+
+[LinkedIn](https://www.linkedin.com/in/sahil-singh-rawat)
+
+[Website](https://www.sahilsinghrawat.in)
+
+[GitHub](https://github.com/sahil-rawat)

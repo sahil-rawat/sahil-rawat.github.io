@@ -6,7 +6,7 @@ tags: [Languages]
 ---
 This is the tweltfh post in the series [Intro To C](https://www.sahilsinghrawat.in/posts/INTRO-TO-C-I/) In the last post we learned typedef
 
-In this post, we will learn about Pointers Arithmetic
+In this article, we will learn about Pointers Arithmetic
 
 ## Pointers Arithmetic
 
@@ -287,3 +287,17 @@ char *q = p; // q also points to the 'X'
 printf("%c\n", *p); // ERROR--cannot dereference void\*!
 printf("%c\n", *q); // Prints "X"
 ```
+
+---
+
+Thanks for Reading, Stay tuned for more ❤︎
+
+If you enjoyed reading the article do follow me on:
+
+[Twitter](https://twitter.com/sahil_s_rawat)
+
+[LinkedIn](https://www.linkedin.com/in/sahil-singh-rawat)
+
+[Website](https://www.sahilsinghrawat.in)
+
+[GitHub](https://github.com/sahil-rawat)

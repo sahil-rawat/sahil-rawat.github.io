@@ -6,7 +6,7 @@ tags: [web]
 ---
 Open Redirect also known as Unvalidated redirects and forwards is a very common vulnerability, It happens when a website takes untrusted input from the user and redirects the user from the web application to an untrusted site or resource that would be used further for malicious purposes.
 
-> The Impact of this Vulnerability is **LOW** unless you are using it to escalate other vulnerabilities
+> 📌 The Impact of this Vulnerability is **LOW** unless you are using it to escalate other vulnerabilities
 
 For example, suppose I utilize the following URL to redirect users to my projects website:
 
@@ -28,11 +28,11 @@ Sometimes an application may have some security measures in place where the deve
 
 # Filtering and Bypass
 
-```https://examplesite.com/login/?next=https://mysite.com```  --- ✅ **Allowed**
-
-```https://examplesite.com/login/?next=https://evilsite.com```  --- 🚫 **Not Allowed**
-
-```https://examplesite.com/login/?next=https://evilsite.com/?google.com``` --- ✅ **Allowed**
+> ✅ https://examplesite.com/login/?next=https://mysite.com  --  **Allowed**
+>
+> 🚫 https://examplesite.com/login/?next=https://evilsite.com  -- **Not Allowed**
+>
+> ✅ https://examplesite.com/login/?next=https://evilsite.com/?google.com --  **Allowed**
 
 In this example, the developers tried to implement a Filtering or Validation mechanism where they defined the list of trusted resources, and the server is checking that the next parameter's value contains a trusted domain or not from the list for example *mysite* is in their trusted resources list however *evilsite* is not, thus the 1st request is allowed but the second is not.
 
@@ -51,3 +51,17 @@ This URL redirects the user to *home.examplesite.com*, any user can replace the 
 In this scenario, there is a filter in place which is not allowing us to redirect to any host other than the trusted one, so we need to try to find different variations that could work, so here the filter is looking for complete string “home.examplesite.com”
 
 There is a way to Bypass this every browser has functionality that if we would type, any domain and a “@” and then the website we want to go to after it then the  browser will redirect to the website after “@”, you can try it by typing in your browser or click on the link *[http://www.anydomain.com@www.sahilsinghrawat.in](http://www.google.com@www.sahilsinghrawat.in)* you will be redirected to my website, Following this, we could redirect the user by a link like *http://examplesite.com/?redirect=http://home.examplesite.com@www.sahilsinghrawat.in*
+
+---
+
+Thanks for Reading, Stay tuned for more ❤︎
+
+If you enjoyed reading the article do follow me on:
+
+[Twitter](https://twitter.com/sahil_s_rawat)
+
+[LinkedIn](https://www.linkedin.com/in/sahil-singh-rawat)
+
+[Website](https://www.sahilsinghrawat.in)
+
+[GitHub](https://github.com/sahil-rawat)

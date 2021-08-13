@@ -4,9 +4,8 @@ date: 2021-07-12 11:38:00 +0530
 categories: [Penetration Testing,Networking]
 tags: [networking]
 ---
-We learned about Pre-Authentication attacks in the last [tutorial](https://www.sahilsinghrawat.in/posts/NET-HACKING1), now moving forward in this tutorial we will explore techniques of Gaining access to that network.
 
-# Gaining Access
+We learned about Pre-Authentication attacks in the last [tutorial](https://www.sahilsinghrawat.in/posts/NET-HACKING1), now moving forward in this article we will explore techniques of Gaining access to that network.
 
 To gain access to a network we need to know the password or key, we will discuss the methods of how we could get the password or key of the network so that we can connect ourselves to that network without anybody noticing.
 
@@ -16,9 +15,9 @@ To gain access to a network we need to know the password or key, we will discuss
 
 Steps in WEP are:
 
-- Client encrypts the data using the WEP key
+- Client encrypts the data using the WEP key 🔑
 - Encrypted data is transmitted
-- Router decrypts the data using the same key
+- Router decrypts the data using the same key 🔑
 
 The Problem with this method is in the way WEP implements the algorithm
 
@@ -172,6 +171,7 @@ here ```min``` and ```max``` are a range of length of the password to generate, 
 
 Some links to wordlist
 
+```text
 ftp://ftp.openwall.com/pub/wordlists/
 http://www.openwall.com/mirrors/
 https://github.com/danielmiessler/SecLists
@@ -182,6 +182,7 @@ http://www.ai.uga.edu/ftplib/natural-language/moby/
 http://www.cotse.com/tools/wordlists1.htm
 http://www.cotse.com/tools/wordlists2.htm
 http://wordlist.sourceforge.net/
+```
 
 #### Cracking
 
@@ -213,3 +214,17 @@ hashcat -m 2500 capture.hccapx rockyou.txt
 ```
 
 where **-m** is the mode to use, in our case 2500 means cracking wpa2 packets hash, then we provide our ```.hccapx``` file obtained, and then the wordlist to use.
+
+---
+
+Thanks for Reading, Stay tuned for more ❤︎
+
+If you enjoyed reading the article do follow me on:
+
+[Twitter](https://twitter.com/sahil_s_rawat)
+
+[LinkedIn](https://www.linkedin.com/in/sahil-singh-rawat)
+
+[Website](https://www.sahilsinghrawat.in)
+
+[GitHub](https://github.com/sahil-rawat)

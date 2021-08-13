@@ -6,13 +6,13 @@ tags: [Languages]
 ---
 This is the third post in the series [Intro To C](https://www.sahilsinghrawat.in/posts/INTRO-TO-C-I/) In the last post we peeked into variables and data types in C language.
 
-In this post, we will learn about Operators and Expressions in the C language
+In this article, we will learn about Operators and Expressions in the C language
 
 ## Operators and Expressions
 
 Following are various operators that are commonly used in C Language:
 
-### The sizeof Operator
+### The sizeof Operator 📏
 
 This operator tells you the size (in bytes) that a particular variable or data type uses in memory.
 
@@ -32,7 +32,7 @@ printf("%zu", sizeof (2 + 7)); // Prints 4 on my system
 printf("%zu", sizeof 3.14);    // Prints 8 on my system
 ```
 
-Remember: it’s the size in bytes of the *type* of the expression, not the size of the expression itself. That’s why the size of 2+7 is the same as the size of variable “a” they’re both type int. Also, you can simply use the sizeof operator to find the bytes that a particular data type uses in memory
+> Remember: it’s the size in bytes of the *type* of the expression, not the size of the expression itself. That’s why the size of 2+7 is the same as the size of variable “a” they’re both type int. Also, you can simply use the sizeof operator to find the bytes that a particular data type uses in memory
 
 ```c
 printf("%zu", sizeof(int));  // Prints 4 on my system
@@ -212,3 +212,17 @@ if (x >= 12)
 	printf("x is not less than 12\n");
 
 ```
+
+---
+
+Thanks for Reading, Stay tuned for more ❤︎
+
+If you enjoyed reading the article do follow me on:
+
+[Twitter](https://twitter.com/sahil_s_rawat)
+
+[LinkedIn](https://www.linkedin.com/in/sahil-singh-rawat)
+
+[Website](https://www.sahilsinghrawat.in)
+
+[GitHub](https://github.com/sahil-rawat)

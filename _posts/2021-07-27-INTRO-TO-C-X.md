@@ -6,7 +6,7 @@ tags: [Languages]
 ---
 This is the tenth post in the series [Intro To C](https://www.sahilsinghrawat.in/posts/INTRO-TO-C-I/) In the last post we learned Structs
 
-In this post, we will learn about Files
+In this article, we will learn about Files
 
 ## File
 
@@ -342,3 +342,17 @@ So... how can we fix all these problems with numbers and structs to get our data
 The summary is to *serialize* the data, which is a general term that means to take all the data and write it out in a format that you control, that is well-known and programmable to work the same way on all platforms.
 
 As you might imagine, this is a solved problem. There are a bunch of serialization libraries you can take advantage of, such as Google's *protocol buffers*, out there and ready to use. They will take care of all the gritty details for you, and even will allow data from your C programs to interoperate with other languages that support the same serialization methods.
+
+---
+
+Thanks for Reading, Stay tuned for more ❤︎
+
+If you enjoyed reading the article do follow me on:
+
+[Twitter](https://twitter.com/sahil_s_rawat)
+
+[LinkedIn](https://www.linkedin.com/in/sahil-singh-rawat)
+
+[Website](https://www.sahilsinghrawat.in)
+
+[GitHub](https://github.com/sahil-rawat)

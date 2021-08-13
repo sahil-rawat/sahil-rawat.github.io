@@ -6,7 +6,7 @@ tags: [Languages]
 ---
 This is the eleventh post in the series [Intro To C](https://www.sahilsinghrawat.in/posts/INTRO-TO-C-I/) In the last post we learned Files in C
 
-In this post, we will learn about typedef
+In this article, we will learn about typedef
 
 ## typedef 
 
@@ -133,3 +133,17 @@ typedef int *intptr;
 int a = 10;
 intptr x = &a; // "intptr" is type "int*"
 ```
+
+---
+
+Thanks for Reading, Stay tuned for more ❤︎
+
+If you enjoyed reading the article do follow me on:
+
+[Twitter](https://twitter.com/sahil_s_rawat)
+
+[LinkedIn](https://www.linkedin.com/in/sahil-singh-rawat)
+
+[Website](https://www.sahilsinghrawat.in)
+
+[GitHub](https://github.com/sahil-rawat)

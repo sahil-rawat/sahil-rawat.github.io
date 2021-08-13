@@ -9,6 +9,8 @@ To get started in the field of CyberSecurity or specifically Reverse Engineering
 
 C Programming language is considered as one of the low-level languages and helps us understand the underlying concepts of Programming
 
+In this series we will learn about the Basics of C language
+
 Let's start with a Basic ***HelloWorld*** Program and understand how it works.
 
 ## Hello World
@@ -89,7 +91,7 @@ As we've already said, gcc is a compiler that's installed on a lot of Unix-like 
 
 So how do we do command-line builds?
 
-## Building with gcc
+## Building with gcc 🏗
 
 If you have a source file called hello.c in the current directory, you can build that into a program called hello with this command typed in a terminal:
 
@@ -106,3 +108,17 @@ If your source is broken up into multiple files, you can compile them all togeth
 ```
 
 and they'll all get built together into a big executable.
+
+---
+
+Thanks for Reading, Stay tuned for more ❤︎
+
+If you enjoyed reading the article do follow me on:
+
+[Twitter](https://twitter.com/sahil_s_rawat)
+
+[LinkedIn](https://www.linkedin.com/in/sahil-singh-rawat)
+
+[Website](https://www.sahilsinghrawat.in)
+
+[GitHub](https://github.com/sahil-rawat)

@@ -6,7 +6,7 @@ tags: [Languages]
 ---
 This is the second post in the series [Intro To C](https://www.sahilsinghrawat.in/posts/INTRO-TO-C-I/) In the last post we introduced C language while going through a demo HelloWorld program and how to compile and build a C program.
 
-In this post, we will learn about Variables and Statements in the C language
+In this article, we will learn about Variables and Statements in the C language
 
 ## Variable and statements
 
@@ -122,3 +122,17 @@ int main(void) {
     }
 }
 ```
+
+---
+
+Thanks for Reading, Stay tuned for more ❤︎
+
+If you enjoyed reading the article do follow me on:
+
+[Twitter](https://twitter.com/sahil_s_rawat)
+
+[LinkedIn](https://www.linkedin.com/in/sahil-singh-rawat)
+
+[Website](https://www.sahilsinghrawat.in)
+
+[GitHub](https://github.com/sahil-rawat)

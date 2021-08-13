@@ -6,7 +6,7 @@ tags: [Languages]
 ---
 This is the thirteenth post in the series [Intro To C](https://www.sahilsinghrawat.in/posts/INTRO-TO-C-I/) In the last post we learned Pointers Arithmetic
 
-In this post, we will learn about Memory Allocation
+In this article, we will learn about Memory Allocation
 
 ## Manual Memory Allocation
 
@@ -209,3 +209,17 @@ int main(void)
 ```
 
 Notice in there how we took the return value from realloc() and reassigned it into the same pointer variable p that we passed in. That’s pretty common to do. 
+
+---
+
+Thanks for Reading, Stay tuned for more ❤︎
+
+If you enjoyed reading the article do follow me on:
+
+[Twitter](https://twitter.com/sahil_s_rawat)
+
+[LinkedIn](https://www.linkedin.com/in/sahil-singh-rawat)
+
+[Website](https://www.sahilsinghrawat.in)
+
+[GitHub](https://github.com/sahil-rawat)

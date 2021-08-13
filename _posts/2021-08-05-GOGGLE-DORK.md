@@ -6,7 +6,7 @@ tags: [Recon]
 ---
 ## Search Engine
 
-Search Engines are huge indexers, specifically indexers of content spread across the World Wide Web. These search engines use “Spiders” and “Crawlers” to search for the content across the Internet
+Search Engines are huge indexers, specifically indexers of content spread across the World Wide Web. These search engines use 🕸 “Spiders” and “Crawlers” to search for the content across the Internet
 
 Google is the most famous example of “Search Engines”, 
 
@@ -40,7 +40,7 @@ Various Factors are responsible for deciding the page rank of a website, like, h
 
 Now there might be some pages which a domain dont want to be crawled, like hidden admin pages, so how do a domain defines that what should be crawled and what shouldn't, here comes the...
 
-### Robots.txt
+### Robots.txt 🤖
 
 This file is the first thing that is indexed by “Crawlers” when visiting a site.
 
@@ -222,3 +222,17 @@ phpMyadmin is a commonly used tool in LAMP stack, this tool is used to manage or
 ---
 
 There are innumerable ways in which google dorks could be used, we discussed only a handfull of them, You can find anything that Google Indexed using these advanced search operators, It completely depends on your creativity how you could use these operators.
+
+---
+
+Thanks for Reading, Stay tuned for more ❤︎
+
+If you enjoyed reading the article do follow me on:
+
+[Twitter](https://twitter.com/sahil_s_rawat)
+
+[LinkedIn](https://www.linkedin.com/in/sahil-singh-rawat)
+
+[Website](https://www.sahilsinghrawat.in)
+
+[GitHub](https://github.com/sahil-rawat)

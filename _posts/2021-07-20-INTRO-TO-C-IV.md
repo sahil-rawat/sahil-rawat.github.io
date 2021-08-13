@@ -6,7 +6,7 @@ tags: [Languages]
 ---
 This is the fourth post in the series [Intro To C](https://www.sahilsinghrawat.in/posts/INTRO-TO-C-I/) In the last post we learned about various operators in C Language
 
-In this post, we will learn about Flow Control Statements in the C language
+In this article, we will learn about Flow Control Statements in the C language
 
 ## Flow Control
 
@@ -44,7 +44,7 @@ if (x == 10) {
 Some devs feel the code is easier to read and avoids errors like this where things visually look like they’re in the if block, but they aren’t.
 
 ```c
-// BAD ERROR EXAMPLE
+// ❌ BAD ERROR EXAMPLE
 if (x == 10)
     printf("x is 10\n");
     printf("And also this happens ALWAYS\n"); 
@@ -294,3 +294,17 @@ ProTip: *ALWAYS* put a comment in the code where you intend to fall through as l
 save other programmers from wondering if you meant to do that.
 
 This is one of the common places to introduce bugs in C programs: forgetting to put a break in your case. You gotta do it if you don’t want to just roll into the next case.
+
+---
+
+Thanks for Reading, Stay tuned for more ❤︎
+
+If you enjoyed reading the article do follow me on:
+
+[Twitter](https://twitter.com/sahil_s_rawat)
+
+[LinkedIn](https://www.linkedin.com/in/sahil-singh-rawat)
+
+[Website](https://www.sahilsinghrawat.in)
+
+[GitHub](https://github.com/sahil-rawat)

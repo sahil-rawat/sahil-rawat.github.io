@@ -28,11 +28,11 @@ Open Burp-Suite, and head over to the proxy tab and select option from there and
 
 We have Burp installed and the listener is active on port 8080, now we need to configure our browsers to use Burp as a proxy,
 
-**For Firefox:** Navigate to preferences → advanced → network → settings, then turn on the manual proxy configuration, and set it to the local proxy as (127.0.0.1 on Port 8080)
+**💻 For Firefox:** Navigate to preferences → advanced → network → settings, then turn on the manual proxy configuration, and set it to the local proxy as (127.0.0.1 on Port 8080)
 
 ![](https://github.com/sahil-rawat/assets/blob/master/IMG/BURP_SUITE_CONFIGURE_II.png?raw=true)
 
-**For Chrome:** Navigate to preferences → advanced → system → click on open your computer's proxy settings → enable web proxy (HTTP) and set it to 127.0.0.1 on port 8080
+**💻 For Chrome:** Navigate to preferences → advanced → system → click on open your computer's proxy settings → enable web proxy (HTTP) and set it to 127.0.0.1 on port 8080
 
 ![](https://github.com/sahil-rawat/assets/blob/master/IMG/BURP_SUITE_CONFIGURE_III.png?raw=true)
 
@@ -115,3 +115,17 @@ This tab is used to test or analyze the quality of randomness of data, It is goo
 ![](https://github.com/sahil-rawat/assets/blob/master/IMG/BURP_SUITE_SEQUENCER_I.png?raw=true)
 
 Here we need to select a request to capture on and then specify the location of the token in the response we need to test for, after specifying the custom location of the token we can start the live capture then burp will send various requests sequentially and then analyze those tokens for randomness.
+
+---
+
+Thanks for Reading, Stay tuned for more ❤︎
+
+If you enjoyed reading the article do follow me on:
+
+[Twitter](https://twitter.com/sahil_s_rawat)
+
+[LinkedIn](https://www.linkedin.com/in/sahil-singh-rawat)
+
+[Website](https://www.sahilsinghrawat.in)
+
+[GitHub](https://github.com/sahil-rawat)

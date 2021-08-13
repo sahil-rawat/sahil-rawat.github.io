@@ -35,3 +35,17 @@ DNS spoofing is one of the most interesting attack vectors, So when a user opens
 An Attacker can spoof this and provide the IP address of any malicious website or attacker's machine, instead of the real IP address to the victim, where the attacker is running an exact clone on his server and once the user gets to the attacker's server, and logs in with the credentials, the attacker gets those credentials.
 
 To perform DNS spoofing open the router's web page, enter the credentials to get to the settings portal, open DNS settings, and then set the DNS server to the address of the attacker machine where a Fake DNS server is running. 
+
+---
+
+Thanks for Reading, Stay tuned for more ❤︎
+
+If you enjoyed reading the article do follow me on:
+
+[Twitter](https://twitter.com/sahil_s_rawat)
+
+[LinkedIn](https://www.linkedin.com/in/sahil-singh-rawat)
+
+[Website](https://www.sahilsinghrawat.in)
+
+[GitHub](https://github.com/sahil-rawat)

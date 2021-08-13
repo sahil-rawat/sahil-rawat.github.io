@@ -6,9 +6,9 @@ tags: [Languages]
 ---
 This is the sixth post in the series [Intro To C](https://www.sahilsinghrawat.in/posts/INTRO-TO-C-I/) In the last post we learned about Flow Control Statements
 
-In this post, we will learn about Pointers
+In this article, we will learn about Pointers
 
-## Pointers
+## Pointers 👉🏻
 
 Pointers are one of the most feared things in the C language. They are the one thing that makes this language challenging at all. But why?
 
@@ -254,4 +254,18 @@ sizeof p // p is type int*, so returns size of `int*`
 sizeof *p // *p is type int, so returns size of `int`
 ```
 
-You might see code with that last sizeof in there. Just remember that sizeof is all about the type of the expression, not the variables in the expression themselves.
+You might see code with that last sizeof in there. Just remember that sizeof is all about the type of the exp
+
+---
+
+Thanks for Reading, Stay tuned for more ❤︎
+
+If you enjoyed reading the article do follow me on:
+
+[Twitter](https://twitter.com/sahil_s_rawat)
+
+[LinkedIn](https://www.linkedin.com/in/sahil-singh-rawat)
+
+[Website](https://www.sahilsinghrawat.in)
+
+[GitHub](https://github.com/sahil-rawat)
