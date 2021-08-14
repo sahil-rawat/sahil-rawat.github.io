@@ -4,7 +4,7 @@ date: 2021-07-03 13:37:00 +0530
 categories: [BugBounty,Web]
 tags: [web]
 ---
-
+![](https://github.com/sahil-rawat/assets/blob/master/IMG/MAIN2.jpg?raw=true)
 
 Burp Suite is a tool or set of tools used for penetration testing of web applications, It is one of the most popular tools among professional web security researchers and bug bounty hunters. There are two versions of the burp suite, Community Edition, and Professional Edition, Community Edition is a free version but with limited functionality, which is sufficient for Beginners.
 

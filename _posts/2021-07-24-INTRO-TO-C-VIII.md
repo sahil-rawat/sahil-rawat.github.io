@@ -4,6 +4,8 @@ date: 2021-07-24 13:39:50 +0530
 categories: [Languages,C]
 tags: [Languages]
 ---
+![](https://github.com/sahil-rawat/assets/blob/master/IMG/MAIN3.jpg?raw=true)
+
 This is the eighth post in the series [Intro To C](https://www.sahilsinghrawat.in/posts/INTRO-TO-C-I/) In the last post we learned Arrays
 
 In this article, we will learn about Strings

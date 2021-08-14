@@ -4,6 +4,8 @@ date: 2021-08-03 13:39:50 +0530
 categories: [Languages,C]
 tags: [Languages]
 ---
+![](https://github.com/sahil-rawat/assets/blob/master/IMG/MAIN7.jpg?raw=true)
+
 This is the thirteenth post in the series [Intro To C](https://www.sahilsinghrawat.in/posts/INTRO-TO-C-I/) In the last post we learned Pointers Arithmetic
 
 In this article, we will learn about Memory Allocation

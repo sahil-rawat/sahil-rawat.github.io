@@ -4,6 +4,7 @@ date: 2021-07-17 13:39:50 +0530
 categories: [Languages,C]
 tags: [Languages]
 ---
+![](https://github.com/sahil-rawat/assets/blob/master/IMG/MAIN3.jpg?raw=true)
 
 To get started in the field of CyberSecurity or specifically Reverse Engineering. The knowledge of C language will help a lot, It's not that Learning C is compulsory but it helps in understanding the source code which is written in C language, however, Learning C Language helps because most of the executables were written in C.
 

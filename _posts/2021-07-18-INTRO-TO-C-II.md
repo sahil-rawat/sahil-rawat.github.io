@@ -4,6 +4,8 @@ date: 2021-07-18 13:39:50 +0530
 categories: [Languages,C]
 tags: [Languages]
 ---
+![](https://github.com/sahil-rawat/assets/blob/master/IMG/MAIN4.jpg?raw=true)
+
 This is the second post in the series [Intro To C](https://www.sahilsinghrawat.in/posts/INTRO-TO-C-I/) In the last post we introduced C language while going through a demo HelloWorld program and how to compile and build a C program.
 
 In this article, we will learn about Variables and Statements in the C language

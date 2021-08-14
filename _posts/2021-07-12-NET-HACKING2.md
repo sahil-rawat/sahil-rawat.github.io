@@ -4,6 +4,7 @@ date: 2021-07-12 11:38:00 +0530
 categories: [Penetration Testing,Networking]
 tags: [networking]
 ---
+![](https://github.com/sahil-rawat/assets/blob/master/IMG/MAIN10.jpg?raw=true)
 
 We learned about Pre-Authentication attacks in the last [tutorial](https://www.sahilsinghrawat.in/posts/NET-HACKING1), now moving forward in this article we will explore techniques of Gaining access to that network.
 

@@ -5,6 +5,7 @@ categories: [BugBounty,Web]
 tags: [web]
 ---
 
+![](https://github.com/sahil-rawat/assets/blob/master/IMG/MAIN.jpg?raw=true)
 
 I am going to start a series on web application security 🧑🏻‍💻, which will contain posts related to topics ranging from how a website works to various common vulnerabilities found in websites. This series will be helpful for beginners who are starting in web application security or 🐞 bug-bounty.
 

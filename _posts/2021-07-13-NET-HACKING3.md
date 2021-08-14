@@ -4,7 +4,7 @@ date: 2021-07-13 18:48:00 +0530
 categories: [Penetration Testing,Networking]
 tags: [networking]
 ---
-
+![](https://github.com/sahil-rawat/assets/blob/master/IMG/MAIN7.jpg?raw=true)
 
 By now if you are following the series you were able to gain access to the network. Once we gain the access to the network we could perform the attacks discussed in this post,
 We could gather info about the devices connected to the network, we could intercept the data, or modify the data *(inject evil code)*
