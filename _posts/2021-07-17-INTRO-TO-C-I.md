@@ -6,9 +6,9 @@ tags: [Languages]
 ---
 ![](https://github.com/sahil-rawat/assets/blob/master/IMG/MAIN3.jpg?raw=true)
 
-To get started in the field of CyberSecurity or specifically Reverse Engineering. The knowledge of C language will help a lot, It's not that Learning C is necessary but it helps in understanding the source code which is written in C language.
+To get started in the field of CyberSecurity or specifically Reverse Engineering. The knowledge of C language will help a lot, It's not that Learning C is compulsory but it helps in understanding the source code which is written in C language, however, Learning C Language helps because most of the executables were written in C.
 
-C Programming language is considered as one of the low-level languages and helps us understand the underlying concepts of Programming, C is one of the most popular languages, and it is what makes up the majority of the exploits out there today. C also makes up some of the most powerful hacking programs and viruses that are out there today.
+C Programming language is considered as one of the low-level languages and helps us understand the underlying concepts of Programming
 
 In this series we will learn about the Basics of C language
 
