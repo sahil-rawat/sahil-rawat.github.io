@@ -22,7 +22,7 @@ Let's Understand how this works
 
 ![IMG1](https://github.com/sahil-rawat/assets/blob/master/IMG/GOOGLE_DORK_CRAWLER_I.png?raw=true)
 
-A web crawler discovers a new domain say “somewebsite.com”, so it will scrao the entire content on the domain and look for various keywords like in our example `[Technology, Hacking, Science]` these keywords are discovered on the domain somewebsite.com all  these scraped data will be saved by search engines now anytime a user will search for a query with “Technology”, “Hacking” or “Science” in it the search engine will present “somewebsite.com” to the user.
+A web crawler discovers a new domain say “somewebsite.com”, so it will scrap the entire content on the domain and look for various keywords like in our example `[Technology, Hacking, Science]` these keywords are discovered on the domain somewebsite.com all  these scraped data will be saved by search engines now anytime a user will search for a query with “Technology”, “Hacking” or “Science” in it the search engine will present “somewebsite.com” to the user.
 
 Now, what if the website contains another URL to a domain “new.somewebsite.com” then the crawler would scrape information from that domain as well and save it.
 
