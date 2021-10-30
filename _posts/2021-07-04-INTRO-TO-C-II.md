@@ -1,6 +1,6 @@
 ---
 title: "Intro To C : Part II (Variables)"
-date: 2021-07-18 13:39:50 +0530
+date: 2021-07-04 13:39:50 +0530
 categories: [Languages,C]
 tags: [Languages]
 ---

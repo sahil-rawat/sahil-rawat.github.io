@@ -1,6 +1,6 @@
 ---
 title: "Intro To C : Part XII (Pointers Arithmetic)"
-date: 2021-08-01 13:39:50 +0530
+date: 2021-07-14 13:39:50 +0530
 categories: [Languages,C]
 tags: [Languages]
 ---

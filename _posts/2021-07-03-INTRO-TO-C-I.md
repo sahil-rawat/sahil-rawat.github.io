@@ -1,6 +1,6 @@
 ---
 title: "Intro To C : Part I (Introduction)"
-date: 2021-07-17 13:39:50 +0530
+date: 2021-07-03 13:39:50 +0530
 categories: [Languages,C]
 tags: [Languages]
 ---

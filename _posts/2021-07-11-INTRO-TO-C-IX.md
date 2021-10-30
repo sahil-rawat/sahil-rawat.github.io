@@ -1,6 +1,6 @@
 ---
 title: "Intro To C : Part IX (Structs)"
-date: 2021-07-25 13:39:50 +0530
+date: 2021-07-11 13:39:50 +0530
 categories: [Languages,C]
 tags: [Languages]
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Google Dorking"
-date: 2021-08-05 13:39:50 +0530
+date: 2021-07-25 13:39:50 +0530
 categories: [Recon, OSINT]
 tags: [Recon]
 ---

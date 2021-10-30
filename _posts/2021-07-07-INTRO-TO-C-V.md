@@ -1,6 +1,6 @@
 ---
 title: "Intro To C : Part V (Functions)"
-date: 2021-07-21 13:39:50 +0530
+date: 2021-07-07 13:39:50 +0530
 categories: [Languages,C]
 tags: [Languages]
 ---

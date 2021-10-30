@@ -1,6 +1,6 @@
 ---
 title: "Intro To C : Part VI (Pointers)"
-date: 2021-07-22 13:39:50 +0530
+date: 2021-07-07 13:39:50 +0530
 categories: [Languages,C]
 tags: [Languages]
 ---

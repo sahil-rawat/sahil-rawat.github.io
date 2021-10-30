@@ -1,6 +1,6 @@
 ---
 title: "Intro To C : Part XII (Memory Allocation)"
-date: 2021-08-03 13:39:50 +0530
+date: 2021-07-16 13:39:50 +0530
 categories: [Languages,C]
 tags: [Languages]
 ---

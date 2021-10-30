@@ -1,6 +1,6 @@
 ---
 title: "Intro To C : Part VII (Arrays)"
-date: 2021-07-23 13:39:50 +0530
+date: 2021-07-08 13:39:50 +0530
 categories: [Languages,C]
 tags: [Languages]
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Intro To C : Part VIII (Strings)"
-date: 2021-07-24 13:39:50 +0530
+date: 2021-07-09 13:39:50 +0530
 categories: [Languages,C]
 tags: [Languages]
 ---

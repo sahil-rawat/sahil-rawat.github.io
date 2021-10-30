@@ -1,6 +1,6 @@
 ---
 title: "Intro To C : Part X (Files In C)"
-date: 2021-07-27 13:39:50 +0530
+date: 2021-07-12 13:39:50 +0530
 categories: [Languages,C]
 tags: [Languages]
 ---
