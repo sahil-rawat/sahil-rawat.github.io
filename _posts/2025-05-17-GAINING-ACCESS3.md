@@ -6,7 +6,7 @@ tags: [networking]
 ---
 ![](https://github.com/sahil-rawat/assets/blob/master/IMG/GAIN_ACCESS3.jpg?raw=true)
 
-This is the Third Article in Gaining Access Series where we will be focussing on What is Socail Engineering Attack? and how can we get started with it?
+This is the Third Article in Gaining Access Series where we will see how we can perform the attacks we discussed in last two posts Over the internet
 
 # 🌐 Using Attacks Outside Your Network
 
