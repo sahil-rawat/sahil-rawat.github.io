@@ -1,5 +1,5 @@
 ---
-title: Mobile App Security Testing: A Beginner-Friendly Guide 
+title: Mobile App Security Testing - A Beginner-Friendly Guide 
 date: 2025-05-09 08:34:00 +0530
 categories: [BugBounty,Web]
 tags: [web]
