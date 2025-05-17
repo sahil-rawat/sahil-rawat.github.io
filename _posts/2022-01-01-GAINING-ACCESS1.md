@@ -4,6 +4,8 @@ date: 2022-01-01 11:14:00 +0530
 categories: [Penetration Testing,Access]
 tags: [networking]
 ---
+![](https://github.com/sahil-rawat/assets/blob/master/IMG/GAIN_ACCESS1.jpg?raw=true)
+
 
 # Gaining Access
 
@@ -17,7 +19,7 @@ Two main Approaches to attacking these Systems are-
 - Client Side Attacks: It requires user interaction like opening a file,installing an update, Basically here we learn how to create trojans and how to create backdoors.
 
 
-## **Server Side Attack**
+## Server Side Attack
 
 To start with we need the IP address of the target system, the target system in question here will be a web server, because in case of a PC even if we get the IP address of the system the computer is hiding behind a router and thus we can't do much. thus we consider web servers which are directly connected to the internet and have a Public IP associated to them. It can also work if the PC is on the same network and we can ping the PC using its IP address.
 
@@ -28,7 +30,7 @@ To get the IP →
 
 `NOTE: Getting the IP is tricker if the target is a personal computer, might be useless if the target is accessing the internet through a network as the IP will be the router IP and not the target's, client side attacks are more effective in this case as reverse connection can be used.`
 
-### **Information Gathering**
+### Information Gathering
 
 First step in any kind of hacking is Information Gathering, The success of an attack depends on the outcome of Recon/Information Gathering phase,
 Here we will try to gather information like OS of the system, Services running on the system, Open ports, Versions of the services installed etc. 
@@ -37,7 +39,7 @@ There are varoius tools available to scan the target, the most commonly used is 
 
 Try Default Credentials or Anonymous login to services,example ssh,ftp.
 
-### **Metasploit**
+### Metasploit
 
 Once found an vulnerability in the system we need a way to exploit it, The best framework out there for this purpose is metasploit, It is used to create or use exploits after finding a vulnerability, It is an exploit development and execution tool.
 
@@ -60,7 +62,7 @@ Basic commands in msfconsole are:
 We can use Metasploit community which is a web based GUI tool.
 
 
-## **Client Side Attack**
+## Client Side Attack
 
 This should be used if Server Side Attack fails or the target is hidden behind a router (i.e we cant ping the target), This requires the interaction of client in order to be successful Here Information Gathering is crucial because the attacker need to design the attack vector very carefully from the information gathered.
 
@@ -136,3 +138,18 @@ Now to get the request in bdfproxy we need to link all the data intercepted in b
 Then simply run the multi handler and whenever the victim downloads a file it get backdoored with our executable and we get full access once the user runs it.
 
 Note:- It won't work if you download using https page
+
+
+--- 
+
+Thanks for Reading, Stay tuned for more ❤︎
+
+If you enjoyed reading the article do follow me on:
+
+[Twitter](https://twitter.com/sahil_s_rawat)
+
+[LinkedIn](https://www.linkedin.com/in/sahil-singh-rawat)
+
+[Website](https://www.sahilsinghrawat.in)
+
+[GitHub](https://github.com/sahil-rawat)

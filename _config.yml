@@ -17,7 +17,7 @@ timezone: Asia/Kolkata
 # --------------------------
 title: Sahil Rawat                         # the main title
 
-tagline:  Development | CyberSecurity   # it will display as the sub-title
+tagline:  Development / CyberSecurity   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   Personal Blog on CyberSecurity & Portfolio website.
@@ -82,7 +82,7 @@ avatar: https://github.com/sahil-rawat/assets/blob/master/IMG/avatar.jpeg?raw=tr
 toc: true
 
 disqus:
-  comments: false  # boolean type, the global switch for posts comments.
+  comments: true  # boolean type, the global switch for posts comments.
   shortname: 'sahilsinghrawat-in'    
 
 paginate: 10
