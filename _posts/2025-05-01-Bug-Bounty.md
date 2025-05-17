@@ -1,6 +1,6 @@
 ---
 title: HTTP:Where, What, Why?
-date: 2021-07-02 13:31:00 +0530
+date: 2025-05-01 13:31:00 +0530
 categories: [BugBounty,Web]
 tags: [web]
 ---
@@ -138,6 +138,7 @@ here as we can see that the GET request is logged into the burp suite before goi
 
 ![](https://github.com/sahil-rawat/assets/blob/master/IMG/HTTP_WWW_BURP.png?raw=true)
 
+Happy Hunting 🔍🐞 
 --- 
 
 Thanks for Reading, Stay tuned for more ❤︎

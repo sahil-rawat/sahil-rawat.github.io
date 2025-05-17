@@ -1,6 +1,6 @@
 ---
 title: Burp Suite:A Step-By-Step Guide
-date: 2021-07-03 13:37:00 +0530
+date: 2025-05-02 13:37:00 +0530
 categories: [BugBounty,Web]
 tags: [web]
 ---
@@ -115,6 +115,8 @@ This tab is used to test or analyze the quality of randomness of data, It is goo
 ![](https://github.com/sahil-rawat/assets/blob/master/IMG/BURP_SUITE_SEQUENCER_I.png?raw=true)
 
 Here we need to select a request to capture on and then specify the location of the token in the response we need to test for, after specifying the custom location of the token we can start the live capture then burp will send various requests sequentially and then analyze those tokens for randomness.
+
+Happy Hunting 🔍🐞 
 
 ---
 

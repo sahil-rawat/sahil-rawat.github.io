@@ -1,6 +1,6 @@
 ---
 title: Gaining Access:Part II
-date: 2025-05-15 11:18:00 +0530
+date: 2022-01-02 11:18:00 +0530
 categories: [Penetration Testing,Access]
 tags: [networking]
 ---
