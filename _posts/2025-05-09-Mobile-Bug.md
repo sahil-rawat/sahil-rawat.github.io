@@ -256,7 +256,7 @@ startActivity(call);
 
 ---
 
-# 🖞️ Conclusion
+# 🧠 Conclusion
 
 Mobile app testing might seem tough at first—but most issues are well-known web vulnerabilities repackaged for mobile. With the right tools, a good methodology, and a curious mindset, you'll uncover plenty of bugs that others miss.
 

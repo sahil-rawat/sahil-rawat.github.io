@@ -22,7 +22,7 @@ SQL Injection occurs when:
 
 ### Unsafe Code Example:
 
-```python
+```javascript
 // Vulnerable code
 const result = db.query("SELECT id FROM my_table WHERE id = " + request.query['id']);
 ```
@@ -31,7 +31,7 @@ This allows attackers to inject arbitrary SQL in the `id` parameter.
 
 ### Safe Alternative:
 
-```python
+```javascript
 // Safe with Prepared Statements
 const query = db.prepare("SELECT id FROM my_table WHERE id = :id");
 query.execute({ id: request.query['id'] });
