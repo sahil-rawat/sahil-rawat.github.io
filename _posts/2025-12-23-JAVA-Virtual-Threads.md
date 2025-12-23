@@ -1,5 +1,5 @@
 ---
-title: Java Internals- Virtual Threads & The End of Reactive Complexity
+title: Java Internals - Virtual Threads & The End of Reactive Complexity
 date: 2025-12-23 10:30:00 +0530
 categories: [Devlopment,java]
 tags: [java]
@@ -32,7 +32,7 @@ This is why we moved to asynchronous frameworks (Reactive). We couldn't afford t
 
 ## The New Model: Virtual Threads (M:N) 🧵
 
-Virtual Threads decouple the "Java Thread" from the "OS Thread."
+Virtual Threads decouple the **"Java Thread"** from the **"OS Thread."**
 
 The JVM now manages a pool of OS threads (called Carrier Threads). Millions of Virtual Threads can be multiplexed onto a very small number of Carrier Threads.
 
@@ -66,11 +66,11 @@ When a Virtual Thread performs a blocking operation, the JVM performs a maneuver
 
 This relies on a construct called a Continuation.
 
-* Running: The Virtual Thread is "mounted" on a Carrier Thread. It executes bytecode normally.
-* Blocking: The code hits a blocking call (e.g., a DB query).
-* Yielding: The JVM detects this. Instead of blocking the Carrier Thread, it captures the Virtual Thread's stack frame (its current state, variables, and instruction pointer).
-* Unmounting: This stack frame is moved from the stack memory into the JVM Heap.
-* Re-scheduling: The Carrier Thread is now free to pick up another Virtual Thread and execute it.
+* **Running**: The Virtual Thread is "mounted" on a Carrier Thread. It executes bytecode normally.
+* **Blocking**: The code hits a blocking call (e.g., a DB query).
+* **Yielding**: The JVM detects this. Instead of blocking the Carrier Thread, it captures the Virtual Thread's stack frame (its current state, variables, and instruction pointer).
+* **Unmounting**: This stack frame is moved from the stack memory into the JVM Heap.
+* **Re-scheduling**: The Carrier Thread is now free to pick up another Virtual Thread and execute it.
 
 When the database operation finishes, the OS signals the JVM. The JVM restores the stack frame from the Heap (resuming the Continuation) and schedules the Virtual Thread to run again potentially on a completely different Carrier Thread.
 
@@ -80,9 +80,9 @@ This architecture changes the memory profile of Java applications significantly.
 
 A Platform Thread requires ~1MB of fixed stack space (Native Memory). A Virtual Thread has a variable stack size stored in the Heap. It starts small (often just a few hundred bytes) and grows as needed.
 
-Let's compare running 100,000 concurrent tasks:
-* Platform Threads: 100,000 threads × 1MB stack = 100 GB RAM (Likely crashes the JVM).
-* Virtual Threads: 100,000 threads × ~1KB (avg stack) = 100 MB RAM (Runs easily on a laptop).
+Let's compare running 1000000 concurrent tasks:
+* Platform Threads: 1000000 threads × 1MB stack = 100 GB RAM (Likely crashes the JVM).
+* Virtual Threads: 1000000 threads × ~1KB (avg stack) = 100 MB RAM (Runs easily on a laptop).
 
 ## The Developer's Gotchas
 
