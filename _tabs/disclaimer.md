@@ -3,12 +3,15 @@ title: Disclaimer
 icon: fas fa-warning
 order: 5
 ---
-All the blog posts and tutorials are for informational and educational purposes only. The tutorials provided on www.sahilsinghrawat.in are only for those who are interested to learn about Ethical Hacking, Cyber Security, and Penetration Testing. 
 
-All tutorials have been made using our own routers, servers, websites, and other resources, they do not contain any illegal activity. We do not promote, encourage, support, or excite any illegal activity or hacking without written permission in general. We want to raise security awareness and inform our readers on how to prevent themselves from being a victim of hackers. If you plan to use the information for illegal purposes, please leave this website now. We cannot be held responsible for any misuse of the given information.
+Important: Educational and Ethical Use Only
 
-The misuse of the information on this website can result in criminal charges brought against the persons in question. The authors and www.sahilsinghrawat.in will not be held responsible in the event any criminal charges be brought against any individuals misusing the information in this website to break the law.
+The content provided on www.sahilsinghrawat.in is for educational and informational purposes only. My goal is to share knowledge regarding Ethical Hacking, Cybersecurity research, and Software Development to help professionals and enthusiasts build more secure systems.
 
-You shall not misuse the information to gain unauthorized access. However, you may try out these hacks on your own computer at your own risk. Performing hack attempts (without permission) on computers that you do not own is illegal.
+1. No Illegal Use All tutorials and research are conducted in controlled environments (my own servers, lab networks, and authorized platforms). I do not promote, encourage, or support any illegal activities. If you intend to use the information provided here for unauthorized or malicious purposes, please leave this site immediately.
 
-We believe only in White Hat Hacking. On the other hand, we condemn Black Hat Hacking.
+2. Limitation of Liability The techniques described here are intended for use on systems you own or have explicit, written permission to test. The author and this website are not responsible for any misuse of this information. Misusing these techniques to gain unauthorized access is illegal and may result in criminal charges. You assume all risk for your actions.
+
+3. Professional Boundaries While I work as a Software Developer, the views and research shared here are entirely my own and do not reflect the opinions or policies of my employer. Furthermore, the information on this site is provided "as is" without any warranties of completeness or accuracy.
+
+4. White Hat Philosophy I believe in White Hat Hacking and the principles of Responsible Disclosure. My research is dedicated to raising security awareness and helping the community stay one step ahead of malicious actors.
