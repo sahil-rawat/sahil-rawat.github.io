@@ -1,0 +1,245 @@
+<!DOCTYPE html><html lang="en-US" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="generator" content="Jekyll v4.4.1" /><meta property="og:title" content="Intro To C : Part X (Files In C)" /><meta property="og:locale" content="en_US" /><meta name="description" content="Exploring System Internals and the Mechanics of Software Security." /><meta property="og:description" content="Exploring System Internals and the Mechanics of Software Security." /><link rel="canonical" href="https://www.sahilsinghrawat.com/posts/INTRO-TO-C-X/" /><meta property="og:url" content="https://www.sahilsinghrawat.com/posts/INTRO-TO-C-X/" /><meta property="og:site_name" content="Sahil Rawat" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2021-07-12T13:39:50+05:30" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="Intro To C : Part X (Files In C)" /><meta name="twitter:site" content="@sahil_s_rawat" /><meta name="google-site-verification" content="google_meta_tag_verification" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-03-18T20:19:13+05:30","datePublished":"2021-07-12T13:39:50+05:30","description":"Exploring System Internals and the Mechanics of Software Security.","headline":"Intro To C : Part X (Files In C)","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.sahilsinghrawat.com/posts/INTRO-TO-C-X/"},"url":"https://www.sahilsinghrawat.com/posts/INTRO-TO-C-X/"}</script><title>Intro To C : Part X (Files In C) | Sahil Rawat</title><link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="Sahil Rawat"><meta name="application-name" content="Sahil Rawat"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://fonts.gstatic.com"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin="use-credentials"><link rel="dns-prefetch" href="https://www.google-analytics.com"><link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css"><link rel="stylesheet" href="/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.min.css"> <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script><body data-spy="scroll" data-target="#toc"><div id="sidebar" class="d-flex flex-column align-items-end"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/" alt="avatar" class="mx-auto"> <img src="https://github.com/sahil-rawat/assets/blob/master/IMG/avatar.jpeg?raw=true" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title mt-3"> <a href="/">Sahil Rawat</a></div><div class="site-subtitle font-italic">Systems & Security</div></div><ul class="w-100"><li class="nav-item"> <a href="/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>HOME</span> </a><li class="nav-item"> <a href="/about/" class="nav-link"> <i class="fa-fw fas fa-info ml-xl-3 mr-xl-3 unloaded"></i> <span>ABOUT</span> </a><li class="nav-item"> <a href="/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>ARCHIVES</span> </a><li class="nav-item"> <a href="/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>CATEGORIES</span> </a><li class="nav-item"> <a href="/tags/" class="nav-link"> <i class="fa-fw fas fa-tags ml-xl-3 mr-xl-3 unloaded"></i> <span>TAGS</span> </a><li class="nav-item"> <a href="/disclaimer/" class="nav-link"> <i class="fa-fw fas fa-warning ml-xl-3 mr-xl-3 unloaded"></i> <span>DISCLAIMER</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center"> <a href="https://github.com/sahil-rawat" aria-label="github" class="order-3" target="_blank" rel="noopener"> <i class="fab fa-github-alt"></i> </a> <a href="https://twitter.com/sahil_s_rawat" aria-label="twitter" class="order-4" target="_blank" rel="noopener"> <i class="fab fa-twitter"></i> </a> <a href=" javascript:location.href = 'mailto:' + ['sahil','sahilsinghrawat.com'].join('@')" aria-label="email" class="order-5" > <i class="fas fa-envelope"></i> </a> <a href="https://www.linkedin.com/in/sahil-singh-rawat" aria-label="linkedin" class="order-6" target="_blank" rel="noopener"> <i class="fab fa-linkedin"></i> </a> <span class="icon-border order-2"></span> <span id="mode-toggle-wrapper" class="order-1"> <i class="mode-toggle fas fa-adjust"></i> <script type="text/javascript"> class ModeToggle { static get MODE_KEY() { return "mode"; } static get DARK_MODE() { return "dark"; } static get LIGHT_MODE() { return "light"; } constructor() { if (this.hasMode) { if (this.isDarkMode) { if (!this.isSysDarkPrefer) { this.setDark(); } } else { if (this.isSysDarkPrefer) { this.setLight(); } } } var self = this; /* always follow the system prefers */ this.sysDarkPrefers.addListener(function() { if (self.hasMode) { if (self.isDarkMode) { if (!self.isSysDarkPrefer) { self.setDark(); } } else { if (self.isSysDarkPrefer) { self.setLight(); } } self.clearMode(); } self.updateMermaid(); }); } /* constructor() */ setDark() { $('html').attr(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); } setLight() { $('html').attr(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); } clearMode() { $('html').removeAttr(ModeToggle.MODE_KEY); sessionStorage.removeItem(ModeToggle.MODE_KEY); } get sysDarkPrefers() { return window.matchMedia("(prefers-color-scheme: dark)"); } get isSysDarkPrefer() { return this.sysDarkPrefers.matches; } get isDarkMode() { return this.mode == ModeToggle.DARK_MODE; } get isLightMode() { return this.mode == ModeToggle.LIGHT_MODE; } get hasMode() { return this.mode != null; } get mode() { return sessionStorage.getItem(ModeToggle.MODE_KEY); } /* get the current mode on screen */ get modeStatus() { if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer) ) { return ModeToggle.DARK_MODE; } else { return ModeToggle.LIGHT_MODE; } } updateMermaid() { if (typeof mermaid !== "undefined") { let expectedTheme = (this.modeStatus === ModeToggle.DARK_MODE? "dark" : "default"); let config = { theme: expectedTheme }; /* re-render the SVG › <https://github.com/mermaid-js/mermaid/issues/311#issuecomment-332557344> */ $(".mermaid").each(function() { let svgCode = $(this).prev().children().html(); $(this).removeAttr("data-processed"); $(this).html(svgCode); }); mermaid.initialize(config); mermaid.init(undefined, ".mermaid"); } } flipMode() { if (this.hasMode) { if (this.isSysDarkPrefer) { if (this.isLightMode) { this.clearMode(); } else { this.setLight(); } } else { if (this.isDarkMode) { this.clearMode(); } else { this.setDark(); } } } else { if (this.isSysDarkPrefer) { this.setLight(); } else { this.setDark(); } } this.updateMermaid(); } /* flipMode() */ } /* ModeToggle */ let toggle = new ModeToggle(); $(".mode-toggle").click(function() { toggle.flipMode(); }); </script> </span></div></div><div id="topbar-wrapper" class="row justify-content-center topbar-down"><div id="topbar" class="col-11 d-flex h-100 align-items-center justify-content-between"> <span id="breadcrumb"> <span> <a href="/"> Posts </a> </span> <span>Intro To C : Part X (Files In C)</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> Post</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="Search..."> <i class="fa fa-times-circle fa-fw" id="search-cleaner"></i> </span> <span id="search-cancel" >Cancel</span></div></div><div id="main-wrapper"><div id="main"><div class="row"><div id="post-wrapper" class="col-12 col-lg-11 col-xl-8"><div class="post pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><h1 data-toc-skip>Intro To C : Part X (Files In C)</h1><div class="post-meta text-muted d-flex flex-column"><div> <span class="semi-bold"> Sahil Singh Rawat </span> <span class="timeago " data-toggle="tooltip" data-placement="bottom" title="Mon, Jul 12, 2021, 1:39 PM +0530" prep="on" > Jul 12, 2021 <i class="unloaded">2021-07-12T13:39:50+05:30</i> </span></div><div> <span> <span class="timeago lastmod" data-toggle="tooltip" data-placement="bottom" title="Wed, Mar 18, 2026, 8:19 PM +0530" prefix="Updated " > Mar 18 <i class="unloaded">2026-03-18T20:19:13+05:30</i> </span> </span> <span class="readtime" data-toggle="tooltip" data-placement="bottom" title="2336 words">12 min</span></div></div><div class="post-content"><p><img data-proofer-ignore data-src="https://github.com/sahil-rawat/assets/blob/master/IMG/MAIN9.jpg?raw=true" alt="" /></p><p>This is the tenth post in the series <a href="https://www.sahilsinghrawat.com/posts/INTRO-TO-C-I/">Intro To C</a> In the last post we learned Structs</p><p>In this article, we will learn about Files</p><h2 id="file">File</h2><p>We’ve already seen a couple of examples of I/O with scanf() and printf() for doing I/O at the console (screen/keyboard).</p><h3 id="the-file-data-type">The FILE* Data Type</h3><p>When we do any kind of I/O in C, we do so through a piece of data that you get in the form of a FILE* type. This FILE* holds all the information needed to communicate with the I/O subsystem about which file you have open, where you are in the file, and so on.</p><p>The spec refers to these as <em>streams</em>, i.e. a stream of data from a file or any source. I’m going to use “files” and “streams” interchangeably, but you should think of a “file” as a special case of a “stream”. There are other ways to stream data into a program than just reading from a file.</p><p>We’ll see in a moment how to go from having a filename to getting an open FILE* for it, but first I want to mention three streams that are already open for you and ready for use.</p><p>FILE* name</p><div class="table-wrapper"><table><thead><tr><th>FILE*<th>Description<tbody><tr><td>stdin<td>Standard Input, Generally the keyboard by default<tr><td>stdout<td>Standard Output, Generally the screen by default<tr><td>stderr<td>Standard Error, Generally the screen by default, as well</table></div><p>We’ve been using these implicitly already, it turns out. For example, these two calls are the same:</p><div lang="c" class="language-c highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre><span class="n">printf</span><span class="p">(</span><span class="s">"Hello, world!</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<span class="n">fprintf</span><span class="p">(</span><span class="n">stdout</span><span class="p">,</span> <span class="s">"Hello, world!</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span> <span class="c1">// printf to a file*</span>
+</pre></table></code></div></div><p>Also, you’ll notice that both stdout and stderr go to the screen. While this seems at first either like an oversight or redundancy, it isn’t. Typical operating systems allow you to <em>redirect</em> the output of either of those into different files, and it can be convenient to be able to separate error messages from the regular non-error output.</p><p>For example, in a POSIX shell (like sh, ksh, bash, zsh, etc.) on a Unix-like system, we could run a program and send just the non-error (stdout) output to one file, and all the error (stderr) output to another file.</p><div lang="bash" class="language-bash highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>./foo <span class="o">&gt;</span> output.txt 2&gt; errors.txt 
+</pre></table></code></div></div><p>For this reason, you should send serious error messages to stderr instead of stdout. More on how to do that later.</p><h3 id="reading-text-files">Reading Text Files</h3><p>Streams are largely categorized in two different ways: <em>text</em> and <em>binary</em>.</p><p>Text streams are allowed to do a significant translation of the data, most notable translations of newlines to their different representations. Text files are logically a sequence of <em>lines</em> separated by newlines. To be portable, your input data should always end with a newline.</p><p>But the general rule is that if you’re able to edit the file in a regular text editor, it’s a text file. Otherwise, it’s binary.</p><p>Let’s create a file called hello.txt that has just this in it:</p><p><code class="language-plaintext highlighter-rouge">Hello, world!</code></p><p>And let’s write a program to open the file, read a character out of it, and then close the file when we’re done.</p><div lang="c" class="language-c highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre><td class="rouge-code"><pre><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="kt">FILE</span><span class="o">*</span> <span class="n">fp</span><span class="p">;</span>
+	<span class="n">fp</span><span class="o">=</span><span class="n">fopen</span><span class="p">(</span><span class="s">"hello.txt"</span><span class="p">,</span><span class="s">"r"</span><span class="p">);</span>
+	<span class="kt">char</span> <span class="n">c</span><span class="o">=</span><span class="n">fgetc</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span>
+	<span class="n">printf</span><span class="p">(</span><span class="s">"%c</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">c</span><span class="p">);</span>
+	
+	<span class="n">fclose</span><span class="p">(</span><span class="n">fp</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>See how when we opened the file with fopen(), it returned the FILE* to us so we could use it later. (fopen() will return NULL if something goes wrong,)</p><p>Also, notice the “r” that we passed in this means “open a text stream for reading”. (There are various strings we can pass to fopen() with additional meaning, like writing, or appending, and so on.)</p><p>After that, we used the fgetc() function to get a character from the stream.</p><p>Finally, we close the stream when we’re done with it. All streams are automatically closed when the program exits, but it’s good form and good housekeeping to explicitly close any files yourself when done with them.</p><p>The FILE* keeps track of our position in the file. So subsequent calls to fgetc() would get the next character in the file, and then the next, until the end.</p><h3 id="end-of-file-eof">End of File: EOF</h3><p>There is a special character defined as a macro: EOF. This is what fgetc() will return when the end of the file has been reached and you’ve attempted to read another character.</p><p>We can use this to read the whole file in a loop.</p><div lang="c" class="language-c highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre><td class="rouge-code"><pre><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="kt">FILE</span> <span class="o">*</span><span class="n">fp</span><span class="p">;</span>
+	<span class="n">fp</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">"hello.txt"</span><span class="p">,</span> <span class="s">"r"</span><span class="p">);</span>
+	<span class="kt">char</span> <span class="n">c</span><span class="p">;</span>
+	<span class="k">while</span><span class="p">((</span><span class="n">c</span> <span class="o">=</span> <span class="n">fgetc</span><span class="p">(</span><span class="n">fp</span><span class="p">))</span> <span class="o">!=</span> <span class="n">EOF</span><span class="p">)</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s">"%c"</span><span class="p">,</span> <span class="n">c</span><span class="p">);</span>
+	
+	<span class="n">fclose</span><span class="p">(</span><span class="n">fp</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>(Line 10 can be understood by breaking it down starting with the innermost-nested parens. The first thing we do is assign the result of fgets() into c, and <em>then</em> we compare that against EOF. We’ve just crammed it into a single line.)</p><p>And running this, we see:</p><div lang="plaintext" class="language-plaintext highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>Hello, world!
+</pre></table></code></div></div><p>But still, we’re operating a character at a time, and lots of text files make more sense at the line level. Let’s switch to that.</p><h3 id="reading-a-line-at-a-time">Reading a Line at a Time</h3><p>We can get an entire line at once by using fgets() For arguments, it takes a pointer to a char buffer to hold bytes, a maximum number of bytes to read, and a FILE* to read from. It returns NULL on the end-of-file or error.</p><p>Let’s do a similar loop as before, except let’s have a multiline file and read it in a line at a time. Here’s a file quote.txt:</p><div lang="plaintext" class="language-plaintext highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre>A wise man can learn more from
+a foolish question than a fool
+can learn from a wise answer.
+							-Bruce Lee
+
+</pre></table></code></div></div><p>And here’s some code that reads that file a line at a time and prints out a line number before each one:</p><div lang="c" class="language-c highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre><td class="rouge-code"><pre><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">FILE</span> <span class="o">*</span><span class="n">fp</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">s</span><span class="p">[</span><span class="mi">1024</span><span class="p">];</span> <span class="c1">// Big enough for any line this program will encounter</span>
+    <span class="kt">int</span> <span class="n">linecount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">fp</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">"quote.txt"</span><span class="p">,</span> <span class="s">"r"</span><span class="p">);</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">fgets</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">s</span><span class="p">,</span> <span class="n">fp</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%d: %s"</span><span class="p">,</span> <span class="o">++</span><span class="n">linecount</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span>
+    <span class="n">fclose</span><span class="p">(</span><span class="n">fp</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>Which gives the output:</p><div lang="plaintext" class="language-plaintext highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre>1: A wise man can learn more from
+2: a foolish question than a fool
+3: can learn from a wise answer.
+4:                   --Bruce Lee
+
+</pre></table></code></div></div><h3 id="formatted-input">Formatted Input</h3><p>You know how you can get formatted output with printf() You can do the same thing with fscanf().</p><p>Let’s have a file with a series of data records in it. In this case, whales, with name, length in meters, and weight in tonnes. whales.txt:</p><div lang="plaintext" class="language-plaintext highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre>blue 29.9 173
+right 20.7 135
+gray 14.9 41
+humpback 16.0 30
+</pre></table></code></div></div><div lang="c" class="language-c highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre><td class="rouge-code"><pre><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">FILE</span> <span class="o">*</span><span class="n">fp</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">name</span><span class="p">[</span><span class="mi">1024</span><span class="p">];</span> <span class="c1">// Big enough for any line this program will encounter</span>
+    <span class="kt">float</span> <span class="n">length</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">mass</span><span class="p">;</span>
+    <span class="n">fp</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">"whales.txt"</span><span class="p">,</span> <span class="s">"r"</span><span class="p">);</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">fscanf</span><span class="p">(</span><span class="n">fp</span><span class="p">,</span> <span class="s">"%s %f %d"</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">length</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">mass</span><span class="p">)</span> <span class="o">!=</span> <span class="n">EOF</span><span class="p">)</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%s whale, %d tonnes, %.1f meters</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">mass</span><span class="p">,</span> <span class="n">length</span><span class="p">);</span>
+    <span class="n">fclose</span><span class="p">(</span><span class="n">fp</span><span class="p">);</span>
+<span class="p">}</span>
+
+</pre></table></code></div></div><p>Which gives the result:</p><div lang="plaintext" class="language-plaintext highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre>blue whale, 173 tonnes, 29.9 meters
+right whale, 135 tonnes, 20.7 meters
+gray whale, 41 tonnes, 14.9 meters
+humpback whale, 30 tonnes, 16.0 meters
+
+</pre></table></code></div></div><h3 id="writing-text-files">Writing Text Files</h3><p>In much the same way we can use fgetc(), fgets(), and fscanf() to read text streams, we can use fputc(), fputs(), and fprintf() to write text streams.</p><p>To do so, we have to fopen() the file in write mode by passing “w” as the second argument. Opening an existing file in “w” mode will instantly truncate that file to 0 bytes for a full overwrite.</p><p>We’ll put together a simple program that outputs a file output.txt using a variety of output functions.</p><div lang="c" class="language-c highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre><td class="rouge-code"><pre><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">FILE</span> <span class="o">*</span><span class="n">fp</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">32</span><span class="p">;</span>
+    <span class="n">fp</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">"output.txt"</span><span class="p">,</span> <span class="s">"w"</span><span class="p">);</span>
+    <span class="n">fputc</span><span class="p">(</span><span class="sc">'B'</span><span class="p">,</span> <span class="n">fp</span><span class="p">);</span>
+    <span class="n">fputc</span><span class="p">(</span><span class="sc">'\n'</span><span class="p">,</span> <span class="n">fp</span><span class="p">);</span>
+    <span class="n">fprintf</span><span class="p">(</span><span class="n">fp</span><span class="p">,</span> <span class="s">"x = %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>
+    <span class="n">fputs</span><span class="p">(</span><span class="s">"Hello, world!</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">fp</span><span class="p">);</span>
+    <span class="n">fclose</span><span class="p">(</span><span class="n">fp</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>And this produces a file, output.txt, with these contents:</p><div lang="plaintext" class="language-plaintext highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre>B
+x = 32
+Hello, world!
+</pre></table></code></div></div><p>Since stdout is a file, you could replace line 8 with: <code class="language-plaintext highlighter-rouge">fp = stdout;</code></p><p>and the program would have outputted to the console instead of to a file.</p><h3 id="binary-file-io">Binary File I/O</h3><p>So far we’ve just been talking text files. But there’s another type of files we mentioned early on called <em>binary</em> files or binary streams.</p><p>These work very similarly to text files, except the I/O subsystem doesn’t perform any translations on the data like it might with a text file. With binary files, you get a raw stream of bytes, and that’s all.</p><p>The big difference in opening the file is that you have to add a “b” to the mode. That is, to read a binary file, open it in “rb” mode. To write a file, open it in “wb” mode.</p><p>Because it’s streams of bytes, and streams of bytes can contain NUL characters, and the NUL character is the end-of-string marker in C, people rarely use the fprintf() functions to operate on binary files.</p><p>Instead the most common functions are fread() and fwrite(). The functions read and write a specified number of bytes to the stream.</p><p>To demo, we’ll write a couple of programs. One will write a sequence of byte values to disk all at once. And the second program will read a byte at a time and print them out.</p><div lang="c" class="language-c highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre><td class="rouge-code"><pre><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">FILE</span> <span class="o">*</span><span class="n">fp</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">bytes</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">5</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">12</span><span class="p">};</span>
+    <span class="n">fp</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">"output.bin"</span><span class="p">,</span> <span class="s">"wb"</span><span class="p">);</span> <span class="c1">// wb mode for "write binary"!</span>
+    
+    <span class="c1">// In the call to fwrite, the arguments are: </span>
+    <span class="c1">//</span>
+    <span class="c1">// Pointer to data to write</span>
+    <span class="c1">// Size of each "piece" of data</span>
+    <span class="c1">// Count of each "piece" of data</span>
+    <span class="c1">//FILE*</span>
+    
+    <span class="n">fwrite</span><span class="p">(</span><span class="n">bytes</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">char</span><span class="p">),</span> <span class="k">sizeof</span> <span class="n">bytes</span><span class="p">,</span> <span class="n">fp</span><span class="p">)</span>
+    
+    <span class="n">fclose</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span>
+    <span class="p">}</span>
+</pre></table></code></div></div><p>Those two middle arguments to fwrite() are pretty odd. But basically what we want to tell the function is, “We have items that are <em>this</em> big, and we want to write <em>that</em> many of them.” This makes it convenient if you have a record of a fixed length, and you have a bunch of them in an array. You can just tell it the size of one record and how many to write.</p><p>In the example above, we tell it each record is the size of a char, and we have 6 of them as computed by sizeof bytes.</p><p>Running the program gives us a file output.bin, but opening it in a text editor doesn’t show anything friendly! It’s binary data, not text. If I run it through a hex dump program, we can see the output as bytes: <code class="language-plaintext highlighter-rouge">05 25 00 58 ff 0c</code></p><p>And those values in hex do match up to the values (in decimal) that we wrote out.</p><p>But now let’s try to read them back in with a different program. This one will open the file for binary reading (“rb” mode) and will read the bytes one at a time in a loop.</p><p>fread() has the neat feature where it returns the number of bytes read or 0 on EOF. So we can loop until we see that, printing numbers as we go.</p><div lang="c" class="language-c highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre><td class="rouge-code"><pre><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">FILE</span> <span class="o">*</span><span class="n">fp</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">c</span><span class="p">;</span>
+    <span class="n">fp</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">"output.bin"</span><span class="p">,</span> <span class="s">"rb"</span><span class="p">);</span> <span class="c1">// rb for "read binary"!</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">fread</span><span class="p">(</span><span class="o">&amp;</span><span class="n">c</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">char</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">fp</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"%d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">c</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>And, running it, we see our original numbers!</p><div lang="text" class="language-text highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre>5
+37
+0
+88
+255
+12
+</pre></table></code></div></div><h3 id="struct-and-number-caveats">struct and Number Caveats</h3><p>As we saw in the structs section, the compiler is free to add padding to a struct as it sees fit. And different compilers might do this differently. And the same compiler on different architectures could do it differently. And the same compiler on the same architectures could do it differently.</p><p>It’s not portable to just fwrite() an entire struct out to a file when you don’t know where the padding will end up.</p><p>Numbers!</p><p>Turns out all architectures don’t represent numbers in memory the same way.</p><p>Let’s look at a simple fwrite() of a 2-byte number. We’ll write it in hex so each byte is clear. The most significant byte will have the value 0x12 and the least significant will have the value 0x34.</p><div lang="c" class="language-c highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre><span class="kt">unsigned</span> <span class="kt">short</span> <span class="n">v</span> <span class="o">=</span> <span class="mh">0x1234</span><span class="p">;</span> <span class="err">*/</span><span class="o">/</span> <span class="n">Two</span> <span class="n">bytes</span><span class="p">,</span> <span class="mh">0x12</span> <span class="n">and</span> <span class="mh">0x34</span><span class="o">*</span>
+<span class="nf">fwrite</span><span class="p">(</span><span class="o">&amp;</span><span class="n">v</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">v</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">fp</span><span class="p">);</span>
+</pre></table></code></div></div><p>What ends up in the stream? Well, it seems like it should be 0x12 followed by 0x34, right? But if I run this on my machine and hex dump the result, I get:</p><p><code class="language-plaintext highlighter-rouge">34 12</code></p><p>They’re reversed!</p><p>This has something to do with what’s called the <em>endianness</em> of the architecture. Some write the most significant bytes first, and some the least significant bytes first.</p><p>This means that if you write a multibyte number out straight from memory, you can’t do it in a portable way.</p><p>A similar problem exists with the floating point. Most systems use the same format for their floating point numbers, but some do not. No guarantees!</p><p>So… how can we fix all these problems with numbers and structs to get our data written in a portable way?</p><p>The summary is to <em>serialize</em> the data, which is a general term that means to take all the data and write it out in a format that you control, that is well-known and programmable to work the same way on all platforms.</p><p>As you might imagine, this is a solved problem. There are a bunch of serialization libraries you can take advantage of, such as Google’s <em>protocol buffers</em>, out there and ready to use. They will take care of all the gritty details for you, and even will allow data from your C programs to interoperate with other languages that support the same serialization methods.</p><hr /><p>Thanks for Reading, Stay tuned for more ❤︎</p><p>If you enjoyed reading the article do follow me on:</p><p><a href="https://twitter.com/sahil_s_rawat">Twitter</a></p><p><a href="https://www.linkedin.com/in/sahil-singh-rawat">LinkedIn</a></p><p><a href="https://www.sahilsinghrawat.com">Website</a></p><p><a href="https://github.com/sahil-rawat">GitHub</a></p></div><div class="post-tail-wrapper text-muted"><div class="post-meta mb-3"> <i class="far fa-folder-open fa-fw mr-1"></i> <a href='/categories/languages/'>Languages</a>, <a href='/categories/c/'>C</a></div><div class="post-tags"> <i class="fa fa-tags fa-fw mr-1"></i> <a href="/tags/languages/" class="post-tag no-text-decoration" >Languages</a></div><div class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"><div class="license-wrapper"> This post is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> by the author.</div><div class="share-wrapper"> <span class="share-label text-muted mr-1">Share</span> <span class="share-icons"> <a href="https://twitter.com/intent/tweet?text=Intro To C : Part X (Files In C) - Sahil Rawat&url=https://www.sahilsinghrawat.com/posts/INTRO-TO-C-X/" data-toggle="tooltip" data-placement="top" title="Twitter" target="_blank" rel="noopener" aria-label="Twitter"> <i class="fa-fw fab fa-twitter"></i> </a> <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.sahilsinghrawat.com/posts/INTRO-TO-C-X/" data-toggle="tooltip" data-placement="top" title="Linkedin" target="_blank" rel="noopener" aria-label="Linkedin"> <i class="fa-fw fab fa-linkedin"></i> </a> <i class="fa-fw fas fa-link small" onclick="copyLink()" data-toggle="tooltip" data-placement="top" title="Copy link"></i> </span></div></div></div></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted topbar-down"><div class="access"><div id="access-lastmod" class="post"> <span>Recent Update</span><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li><a href="/posts/IDOR/">Everything you need to know about IDOR</a><li><a href="/posts/SSRF/">Beginners Guide to SSRF</a><li><a href="/posts/LFD/">Beginners Guide to LFD</a><li><a href="/posts/SQL-Injection/">Intro to SQL Injection</a><li><a href="/posts/XXE/">XXE:XML External Entity</a></ul></div><div id="access-tags"> <span>Trending Tags</span><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/languages/">Languages</a> <a class="post-tag" href="/tags/web/">web</a> <a class="post-tag" href="/tags/networking/">networking</a> <a class="post-tag" href="/tags/malware-analysis/">Malware analysis</a> <a class="post-tag" href="/tags/mobile/">mobile</a> <a class="post-tag" href="/tags/ai/">AI</a> <a class="post-tag" href="/tags/intro/">intro</a> <a class="post-tag" href="/tags/java/">java</a> <a class="post-tag" href="/tags/linux/">linux</a> <a class="post-tag" href="/tags/llm/">LLM</a></div></div></div><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script><div id="toc-wrapper" class="pl-0 pr-4 mb-5"> <span class="pl-3 pt-2 mb-2">Contents</span><nav id="toc" data-toggle="toc"></nav></div></div></div><div class="row"><div class="col-12 col-lg-11 col-xl-8"><div id="post-extend-wrapper" class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><div id="related-posts" class="mt-5 mb-2 mb-sm-4"><h3 class="pt-2 mt-1 mb-4 ml-1" data-toc-skip>Further Reading</h3><div class="card-deck mb-4"><div class="card"> <a href="/posts/INTRO-TO-C-I/"><div class="card-body"> <span class="timeago small" > Jul 3, 2021 <i class="unloaded">2021-07-03T13:39:50+05:30</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>Intro To C : Part I (Introduction)</h3><div class="text-muted small"><p> To get started in the field of CyberSecurity or specifically Reverse Engineering. The knowledge of C language will help a lot, It’s not that Learning C is compulsory but it helps in understanding...</p></div></div></a></div><div class="card"> <a href="/posts/INTRO-TO-C-II/"><div class="card-body"> <span class="timeago small" > Jul 4, 2021 <i class="unloaded">2021-07-04T13:39:50+05:30</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>Intro To C : Part II (Variables)</h3><div class="text-muted small"><p> This is the second post in the series Intro To C In the last post we introduced C language while going through a demo HelloWorld program and how to compile and build a C program. In this article...</p></div></div></a></div><div class="card"> <a href="/posts/INTRO-TO-C-III/"><div class="card-body"> <span class="timeago small" > Jul 4, 2021 <i class="unloaded">2021-07-04T13:39:50+05:30</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>Intro To C : Part III (Operators)</h3><div class="text-muted small"><p> This is the third post in the series Intro To C In the last post we peeked into variables and data types in C language. In this article, we will learn about Operators and Expressions in the C la...</p></div></div></a></div></div></div><div class="post-navigation d-flex justify-content-between"> <a href="/posts/INTRO-TO-C-IX/" class="btn btn-outline-primary" prompt="Older"><p>Intro To C : Part IX (Structs)</p></a> <a href="/posts/INTRO-TO-C-XI/" class="btn btn-outline-primary" prompt="Newer"><p>Intro To C : Part XI (typedef)</p></a></div></div></div></div><footer class="d-flex w-100 justify-content-center"><div class="d-flex justify-content-between align-items-center"><div class="footer-left"><p class="mb-0"> © 2026 <a href="https://twitter.com/sahil__rawat">Sahil Singh Rawat</a>. <span data-toggle="tooltip" data-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.">Some rights reserved.</span></p></div><div class="footer-right"><p class="mb-0"> Powered by <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> with <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme.</p></div></div></footer></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><h4 class="text-muted mb-4">Trending Tags</h4><a class="post-tag" href="/tags/languages/">Languages</a> <a class="post-tag" href="/tags/web/">web</a> <a class="post-tag" href="/tags/networking/">networking</a> <a class="post-tag" href="/tags/malware-analysis/">Malware analysis</a> <a class="post-tag" href="/tags/mobile/">mobile</a> <a class="post-tag" href="/tags/ai/">AI</a> <a class="post-tag" href="/tags/intro/">intro</a> <a class="post-tag" href="/tags/java/">java</a> <a class="post-tag" href="/tags/linux/">linux</a> <a class="post-tag" href="/tags/llm/">LLM</a></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a> <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.7.3/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="https://www.sahilsinghrawat.com{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5">Oops! No result founds.</p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script> <script async src="https://cdn.jsdelivr.net/combine/npm/popper.js@1.15.0,npm/bootstrap@4/dist/js/bootstrap.min.js"></script> <script defer src="/app.js"></script> <script defer src="https://www.googletagmanager.com/gtag/js?id=G-BSN8SG8EQW"></script> <script> document.addEventListener("DOMContentLoaded", function(event) { window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-BSN8SG8EQW'); }); </script> <script src="https://cdn.jsdelivr.net/combine/npm/lozad/dist/lozad.min.js,npm/magnific-popup@1/dist/jquery.magnific-popup.min.js"></script> <script defer src="/assets/js/dist/post.min.js"></script>

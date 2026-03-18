@@ -1,0 +1,275 @@
+<!DOCTYPE html><html lang="en-US" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="generator" content="Jekyll v4.4.1" /><meta property="og:title" content="Intro To C : Part VII (Arrays)" /><meta property="og:locale" content="en_US" /><meta name="description" content="Exploring System Internals and the Mechanics of Software Security." /><meta property="og:description" content="Exploring System Internals and the Mechanics of Software Security." /><link rel="canonical" href="https://www.sahilsinghrawat.com/posts/INTRO-TO-C-VII/" /><meta property="og:url" content="https://www.sahilsinghrawat.com/posts/INTRO-TO-C-VII/" /><meta property="og:site_name" content="Sahil Rawat" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2021-07-08T13:39:50+05:30" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="Intro To C : Part VII (Arrays)" /><meta name="twitter:site" content="@sahil_s_rawat" /><meta name="google-site-verification" content="google_meta_tag_verification" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-03-18T20:19:13+05:30","datePublished":"2021-07-08T13:39:50+05:30","description":"Exploring System Internals and the Mechanics of Software Security.","headline":"Intro To C : Part VII (Arrays)","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.sahilsinghrawat.com/posts/INTRO-TO-C-VII/"},"url":"https://www.sahilsinghrawat.com/posts/INTRO-TO-C-VII/"}</script><title>Intro To C : Part VII (Arrays) | Sahil Rawat</title><link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="Sahil Rawat"><meta name="application-name" content="Sahil Rawat"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://fonts.gstatic.com"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin="use-credentials"><link rel="dns-prefetch" href="https://www.google-analytics.com"><link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css"><link rel="stylesheet" href="/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.min.css"> <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script><body data-spy="scroll" data-target="#toc"><div id="sidebar" class="d-flex flex-column align-items-end"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/" alt="avatar" class="mx-auto"> <img src="https://github.com/sahil-rawat/assets/blob/master/IMG/avatar.jpeg?raw=true" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title mt-3"> <a href="/">Sahil Rawat</a></div><div class="site-subtitle font-italic">Systems & Security</div></div><ul class="w-100"><li class="nav-item"> <a href="/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>HOME</span> </a><li class="nav-item"> <a href="/about/" class="nav-link"> <i class="fa-fw fas fa-info ml-xl-3 mr-xl-3 unloaded"></i> <span>ABOUT</span> </a><li class="nav-item"> <a href="/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>ARCHIVES</span> </a><li class="nav-item"> <a href="/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>CATEGORIES</span> </a><li class="nav-item"> <a href="/tags/" class="nav-link"> <i class="fa-fw fas fa-tags ml-xl-3 mr-xl-3 unloaded"></i> <span>TAGS</span> </a><li class="nav-item"> <a href="/disclaimer/" class="nav-link"> <i class="fa-fw fas fa-warning ml-xl-3 mr-xl-3 unloaded"></i> <span>DISCLAIMER</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center"> <a href="https://github.com/sahil-rawat" aria-label="github" class="order-3" target="_blank" rel="noopener"> <i class="fab fa-github-alt"></i> </a> <a href="https://twitter.com/sahil_s_rawat" aria-label="twitter" class="order-4" target="_blank" rel="noopener"> <i class="fab fa-twitter"></i> </a> <a href=" javascript:location.href = 'mailto:' + ['sahil','sahilsinghrawat.com'].join('@')" aria-label="email" class="order-5" > <i class="fas fa-envelope"></i> </a> <a href="https://www.linkedin.com/in/sahil-singh-rawat" aria-label="linkedin" class="order-6" target="_blank" rel="noopener"> <i class="fab fa-linkedin"></i> </a> <span class="icon-border order-2"></span> <span id="mode-toggle-wrapper" class="order-1"> <i class="mode-toggle fas fa-adjust"></i> <script type="text/javascript"> class ModeToggle { static get MODE_KEY() { return "mode"; } static get DARK_MODE() { return "dark"; } static get LIGHT_MODE() { return "light"; } constructor() { if (this.hasMode) { if (this.isDarkMode) { if (!this.isSysDarkPrefer) { this.setDark(); } } else { if (this.isSysDarkPrefer) { this.setLight(); } } } var self = this; /* always follow the system prefers */ this.sysDarkPrefers.addListener(function() { if (self.hasMode) { if (self.isDarkMode) { if (!self.isSysDarkPrefer) { self.setDark(); } } else { if (self.isSysDarkPrefer) { self.setLight(); } } self.clearMode(); } self.updateMermaid(); }); } /* constructor() */ setDark() { $('html').attr(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); } setLight() { $('html').attr(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); } clearMode() { $('html').removeAttr(ModeToggle.MODE_KEY); sessionStorage.removeItem(ModeToggle.MODE_KEY); } get sysDarkPrefers() { return window.matchMedia("(prefers-color-scheme: dark)"); } get isSysDarkPrefer() { return this.sysDarkPrefers.matches; } get isDarkMode() { return this.mode == ModeToggle.DARK_MODE; } get isLightMode() { return this.mode == ModeToggle.LIGHT_MODE; } get hasMode() { return this.mode != null; } get mode() { return sessionStorage.getItem(ModeToggle.MODE_KEY); } /* get the current mode on screen */ get modeStatus() { if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer) ) { return ModeToggle.DARK_MODE; } else { return ModeToggle.LIGHT_MODE; } } updateMermaid() { if (typeof mermaid !== "undefined") { let expectedTheme = (this.modeStatus === ModeToggle.DARK_MODE? "dark" : "default"); let config = { theme: expectedTheme }; /* re-render the SVG › <https://github.com/mermaid-js/mermaid/issues/311#issuecomment-332557344> */ $(".mermaid").each(function() { let svgCode = $(this).prev().children().html(); $(this).removeAttr("data-processed"); $(this).html(svgCode); }); mermaid.initialize(config); mermaid.init(undefined, ".mermaid"); } } flipMode() { if (this.hasMode) { if (this.isSysDarkPrefer) { if (this.isLightMode) { this.clearMode(); } else { this.setLight(); } } else { if (this.isDarkMode) { this.clearMode(); } else { this.setDark(); } } } else { if (this.isSysDarkPrefer) { this.setLight(); } else { this.setDark(); } } this.updateMermaid(); } /* flipMode() */ } /* ModeToggle */ let toggle = new ModeToggle(); $(".mode-toggle").click(function() { toggle.flipMode(); }); </script> </span></div></div><div id="topbar-wrapper" class="row justify-content-center topbar-down"><div id="topbar" class="col-11 d-flex h-100 align-items-center justify-content-between"> <span id="breadcrumb"> <span> <a href="/"> Posts </a> </span> <span>Intro To C : Part VII (Arrays)</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> Post</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="Search..."> <i class="fa fa-times-circle fa-fw" id="search-cleaner"></i> </span> <span id="search-cancel" >Cancel</span></div></div><div id="main-wrapper"><div id="main"><div class="row"><div id="post-wrapper" class="col-12 col-lg-11 col-xl-8"><div class="post pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><h1 data-toc-skip>Intro To C : Part VII (Arrays)</h1><div class="post-meta text-muted d-flex flex-column"><div> <span class="semi-bold"> Sahil Singh Rawat </span> <span class="timeago " data-toggle="tooltip" data-placement="bottom" title="Thu, Jul 8, 2021, 1:39 PM +0530" prep="on" > Jul 8, 2021 <i class="unloaded">2021-07-08T13:39:50+05:30</i> </span></div><div> <span> <span class="timeago lastmod" data-toggle="tooltip" data-placement="bottom" title="Wed, Mar 18, 2026, 8:19 PM +0530" prefix="Updated " > Mar 18 <i class="unloaded">2026-03-18T20:19:13+05:30</i> </span> </span> <span class="readtime" data-toggle="tooltip" data-placement="bottom" title="1220 words">6 min</span></div></div><div class="post-content"><p><img data-proofer-ignore data-src="https://github.com/sahil-rawat/assets/blob/master/IMG/MAIN5.jpg?raw=true" alt="" /></p><p>This is the seventh post in the series <a href="https://www.sahilsinghrawat.com/posts/INTRO-TO-C-I/">Intro To C</a> In the last post we learned Pointers</p><p>In this article, we will learn about Arrays</p><h2 id="arrays">Arrays</h2><p>Luckily, C has arrays. It’s considered a low-level language but it does at least have the concept of arrays built-in. And since a great many languages drew inspiration from C’s syntax, you’re probably already familiar with using “[” and “]” for declaring and using arrays in C.</p><p>But only barely! As we’ll find out later, arrays are all pointers and stuff deep down. But for now, let’s just use them as arrays.</p><h3 id="easy-example">Easy Example</h3><p>Let’s just crank out an example:</p><div lang="c" class="language-c highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre><td class="rouge-code"><pre><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+	<span class="kt">float</span> <span class="n">f</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
+
+	<span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">3</span><span class="p">.</span><span class="mi">12301</span>
+	<span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="mi">9</span><span class="p">.</span><span class="mi">12333</span>
+	<span class="n">f</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span><span class="mi">12</span><span class="p">.</span><span class="mi">3423</span>
+	<span class="n">f</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">.</span><span class="mi">23311</span>
+
+<span class="c1">// Print them all out;</span>
+
+	<span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">4</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s">"%f </span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+</pre></table></code></div></div><p>When you declare an array, you have to give it a size. And the size has to be fixed.</p><p>In the above example, we made an array of 4 floats. The value in the square brackets in the declaration lets us know that.</p><p>Later on, in subsequent lines, we access the values in the array, setting them or getting them, again with square brackets.</p><p>Hopefully, this looks familiar from languages you already know!</p><h3 id="getting-the-length-of-an-array">Getting the Length of an Array</h3><p>C doesn’t record this information. You have to manage it separately in another variable.</p><p>There are some circumstances when you <em>can get the length of an array</em>. There is a trick to get the number of elements in an array in the scope in which an array is declared. But, generally speaking, this won’t work the way you want if you pass the array into a function.</p><p>Let’s take a look at this trick. The basic idea is that you take the sizeof array, and then divide that by the size of each element to get the length. For example, if an int is 4 bytes, and the array is 32 bytes long, there must be room for 32/4 or 8 ints in there.</p><div lang="c" class="language-c highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre><span class="kt">int</span> <span class="n">x</span><span class="p">[</span><span class="mi">12</span><span class="p">];</span> <span class="c1">// 12 ints</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"%zu</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">x</span><span class="p">);</span> <span class="c1">// 48 total bytes</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"%zu</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="k">sizeof</span> <span class="p">(</span><span class="kt">int</span><span class="p">));</span> <span class="c1">// 4 bytes per int</span>
+
+<span class="n">printf</span><span class="p">(</span><span class="s">"%zu</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">x</span> <span class="o">/</span> <span class="k">sizeof</span> <span class="p">(</span><span class="kt">int</span><span class="p">));</span> <span class="c1">// 48/4 = 12 ints!</span>
+</pre></table></code></div></div><p>If it’s an array of chars, then sizeof the array is the number of elements, since sizeof(char) is defined to be 1. For anything else, you have to divide by the size of each element.</p><p>But this trick only works in the scope in which the array was defined. If you pass the array to a function, it doesn’t work.</p><div lang="c" class="language-c highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre><td class="rouge-code"><pre><span class="kt">void</span> <span class="nf">foo</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">[</span><span class="mi">12</span><span class="p">])</span>
+<span class="p">{</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s">"%zu</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">x</span><span class="p">);</span> <span class="c1">// 8?! What happened to 48?*</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s">"%zu</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span> <span class="c1">// 4 bytes per int</span>
+
+		<span class="n">printf</span><span class="p">(</span><span class="s">"%zu</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">x</span> <span class="o">/</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span> <span class="c1">// 8/4 = 2 ints?? WRONG.</span>
+<span class="p">}</span>
+
+</pre></table></code></div></div><p>This is because when you “pass” arrays to functions, you’re only passing a pointer to the first element, and that’s what sizeof measures.</p><h3 id="array-initializers">Array Initializers</h3><p>You can initialize an array with constants ahead of time:</p><div lang="c" class="language-c highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre><td class="rouge-code"><pre><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+	<span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">22</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">3490</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">95</span><span class="p">};</span> <span class="c1">// Initialize with these values</span>
+	
+	<span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s">"%d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+	<span class="p">}</span>	
+<span class="p">}</span>
+</pre></table></code></div></div><p><code class="language-plaintext highlighter-rouge">Catch: initializer values must be constant terms. Can't throw variables in there.</code></p><p><code class="language-plaintext highlighter-rouge">You should never have more items in your initializer than there is room for in the array, or the compiler will error out</code></p><div lang="plaintext" class="language-plaintext highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre>foo.c: In function ‘main':
+foo.c:6:39: warning: excess elements in array initializer
+6 |     int a[5] = {22, 37, 3490, 18, 95, 999};
+  |                                       ^~~
+
+</pre></table></code></div></div><p>But you can have fewer items in your initializer than there is room for in the array. The remaining elements in the array will be automatically initialized with zero.</p><div lang="c" class="language-c highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre><td class="rouge-code"><pre><span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">22</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">3490</span><span class="p">};</span>
+
+<span class="c1">// is the same as:</span>
+
+<span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">22</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">3490</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+
+<span class="c1">//It's a common shortcut to see this in an initializer when you want to set an entire array to zero:</span>
+
+<span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="mi">100</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+
+<span class="c1">//Which means, "Make the first element zero, and then automatically make the</span>
+<span class="c1">//rest zero, as well." Lastly, you can also have C compute the size of the</span>
+<span class="c1">// array from the initializer, just by leaving the size off:</span>
+
+<span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">22</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">3490</span><span class="p">};</span> <span class="c1">// is the same as:</span>
+<span class="kt">int</span> <span class="n">a</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">22</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">3490</span><span class="p">};</span>  <span class="c1">// Left the size off!</span>
+</pre></table></code></div></div><h3 id="out-of-bounds">Out of Bounds!</h3><p>C doesn’t stop you from accessing arrays out of bounds. It might not even warn you.</p><p>Let’s check with an example. The array in the example only has 5 elements, but let’s try to print 10 and see what happens:</p><div lang="c" class="language-c highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre><td class="rouge-code"><pre><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">a</span><span class="p">[]</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">};</span>
+
+    <span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"The num is %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>Running it on my computer prints:</p><div lang="plaintext" class="language-plaintext highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre><td class="rouge-code"><pre>The num is 1
+The num is 2
+The num is 3
+The num is 4
+The num is 5
+The num is 32766
+The num is -324534166
+The num is 722891991
+The num is -403008544
+The num is 32766
+</pre></table></code></div></div><h3 id="multidimensional-arrays">Multidimensional Arrays</h3><p>You can add as many dimensions as you want to your arrays.</p><div lang="c" class="language-c highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre><span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">7</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">c</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">5</span><span class="p">][</span><span class="mi">6</span><span class="p">];</span>
+
+</pre></table></code></div></div><p>These are stored in memory in row-major order.</p><p>You an also use initializers on multidimensional arrays by nesting them:</p><div lang="c" class="language-c highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre><td class="rouge-code"><pre><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="kt">int</span> <span class="n">row</span><span class="p">,</span><span class="n">col</span><span class="p">;</span>
+
+	<span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">5</span><span class="p">]</span><span class="o">=</span><span class="p">{</span>     <span class="c1">//initialize a 2d array</span>
+			<span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">},</span>
+			<span class="p">{</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">}</span>
+	<span class="p">};</span>
+	
+	<span class="k">for</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">row</span><span class="o">&lt;</span><span class="mi">2</span><span class="p">;</span><span class="n">row</span><span class="o">++</span><span class="p">){</span>
+		<span class="k">for</span><span class="p">(</span><span class="n">col</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">col</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">;</span><span class="n">col</span><span class="o">++</span><span class="p">){</span>
+				<span class="n">printf</span><span class="p">(</span><span class="s">"(%d,%d) = %d </span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">row</span><span class="p">,</span><span class="n">col</span><span class="p">,</span><span class="n">a</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">col</span><span class="p">])</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>For output of:</p><div lang="plaintext" class="language-plaintext highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre><td class="rouge-code"><pre>(0,0) = 0
+(0,1) = 1
+(0,2) = 2
+(0,3) = 3
+(0,4) = 4
+(1,0) = 5
+(1,1) = 6
+(1,2) = 7
+(1,3) = 8
+(1,4) = 9
+
+</pre></table></code></div></div><h3 id="getting-a-pointer-to-an-array">Getting a Pointer to an Array</h3><p>Generally speaking, when someone talks about a pointer to an array, they’re talking about a pointer <em>to the first element</em> of the array.</p><p>So let’s get a pointer to the first element of an array.</p><div lang="c" class="language-c highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre><td class="rouge-code"><pre><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">11</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">55</span><span class="p">};</span>
+    <span class="kt">int</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span> <span class="c1">// p points to the array</span>
+	
+    <span class="c1">// Well, to the first element, actually</span>
+	
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="o">*</span><span class="n">p</span><span class="p">);</span> <span class="c1">// Prints "11"</span>
+<span class="p">}</span>
+
+<span class="c1">// This is so common to do in C that the language allows us a shorthand:</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span> <span class="c1">// p points to the array</span>
+
+<span class="c1">// is the same as:*4</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span> <span class="c1">// p points to the array, but much nicer-looking!</span>
+
+</pre></table></code></div></div><p>Just referring to the array name in isolation is the same as getting a pointer to the first element of the array! We’re going to use this extensively in the upcoming examples.</p><hr /><p>Thanks for Reading, Stay tuned for more ❤︎</p><p>If you enjoyed reading the article do follow me on:</p><p><a href="https://twitter.com/sahil_s_rawat">Twitter</a></p><p><a href="https://www.linkedin.com/in/sahil-singh-rawat">LinkedIn</a></p><p><a href="https://www.sahilsinghrawat.com">Website</a></p><p><a href="https://github.com/sahil-rawat">GitHub</a></p></div><div class="post-tail-wrapper text-muted"><div class="post-meta mb-3"> <i class="far fa-folder-open fa-fw mr-1"></i> <a href='/categories/languages/'>Languages</a>, <a href='/categories/c/'>C</a></div><div class="post-tags"> <i class="fa fa-tags fa-fw mr-1"></i> <a href="/tags/languages/" class="post-tag no-text-decoration" >Languages</a></div><div class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"><div class="license-wrapper"> This post is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> by the author.</div><div class="share-wrapper"> <span class="share-label text-muted mr-1">Share</span> <span class="share-icons"> <a href="https://twitter.com/intent/tweet?text=Intro To C : Part VII (Arrays) - Sahil Rawat&url=https://www.sahilsinghrawat.com/posts/INTRO-TO-C-VII/" data-toggle="tooltip" data-placement="top" title="Twitter" target="_blank" rel="noopener" aria-label="Twitter"> <i class="fa-fw fab fa-twitter"></i> </a> <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.sahilsinghrawat.com/posts/INTRO-TO-C-VII/" data-toggle="tooltip" data-placement="top" title="Linkedin" target="_blank" rel="noopener" aria-label="Linkedin"> <i class="fa-fw fab fa-linkedin"></i> </a> <i class="fa-fw fas fa-link small" onclick="copyLink()" data-toggle="tooltip" data-placement="top" title="Copy link"></i> </span></div></div></div></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted topbar-down"><div class="access"><div id="access-lastmod" class="post"> <span>Recent Update</span><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li><a href="/posts/IDOR/">Everything you need to know about IDOR</a><li><a href="/posts/SSRF/">Beginners Guide to SSRF</a><li><a href="/posts/LFD/">Beginners Guide to LFD</a><li><a href="/posts/SQL-Injection/">Intro to SQL Injection</a><li><a href="/posts/XXE/">XXE:XML External Entity</a></ul></div><div id="access-tags"> <span>Trending Tags</span><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/languages/">Languages</a> <a class="post-tag" href="/tags/web/">web</a> <a class="post-tag" href="/tags/networking/">networking</a> <a class="post-tag" href="/tags/malware-analysis/">Malware analysis</a> <a class="post-tag" href="/tags/mobile/">mobile</a> <a class="post-tag" href="/tags/ai/">AI</a> <a class="post-tag" href="/tags/intro/">intro</a> <a class="post-tag" href="/tags/java/">java</a> <a class="post-tag" href="/tags/linux/">linux</a> <a class="post-tag" href="/tags/llm/">LLM</a></div></div></div><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script><div id="toc-wrapper" class="pl-0 pr-4 mb-5"> <span class="pl-3 pt-2 mb-2">Contents</span><nav id="toc" data-toggle="toc"></nav></div></div></div><div class="row"><div class="col-12 col-lg-11 col-xl-8"><div id="post-extend-wrapper" class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><div id="related-posts" class="mt-5 mb-2 mb-sm-4"><h3 class="pt-2 mt-1 mb-4 ml-1" data-toc-skip>Further Reading</h3><div class="card-deck mb-4"><div class="card"> <a href="/posts/INTRO-TO-C-I/"><div class="card-body"> <span class="timeago small" > Jul 3, 2021 <i class="unloaded">2021-07-03T13:39:50+05:30</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>Intro To C : Part I (Introduction)</h3><div class="text-muted small"><p> To get started in the field of CyberSecurity or specifically Reverse Engineering. The knowledge of C language will help a lot, It’s not that Learning C is compulsory but it helps in understanding...</p></div></div></a></div><div class="card"> <a href="/posts/INTRO-TO-C-II/"><div class="card-body"> <span class="timeago small" > Jul 4, 2021 <i class="unloaded">2021-07-04T13:39:50+05:30</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>Intro To C : Part II (Variables)</h3><div class="text-muted small"><p> This is the second post in the series Intro To C In the last post we introduced C language while going through a demo HelloWorld program and how to compile and build a C program. In this article...</p></div></div></a></div><div class="card"> <a href="/posts/INTRO-TO-C-III/"><div class="card-body"> <span class="timeago small" > Jul 4, 2021 <i class="unloaded">2021-07-04T13:39:50+05:30</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>Intro To C : Part III (Operators)</h3><div class="text-muted small"><p> This is the third post in the series Intro To C In the last post we peeked into variables and data types in C language. In this article, we will learn about Operators and Expressions in the C la...</p></div></div></a></div></div></div><div class="post-navigation d-flex justify-content-between"> <a href="/posts/INTRO-TO-C-VI/" class="btn btn-outline-primary" prompt="Older"><p>Intro To C : Part VI (Pointers)</p></a> <a href="/posts/INTRO-TO-C-VIII/" class="btn btn-outline-primary" prompt="Newer"><p>Intro To C : Part VIII (Strings)</p></a></div></div></div></div><footer class="d-flex w-100 justify-content-center"><div class="d-flex justify-content-between align-items-center"><div class="footer-left"><p class="mb-0"> © 2026 <a href="https://twitter.com/sahil__rawat">Sahil Singh Rawat</a>. <span data-toggle="tooltip" data-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.">Some rights reserved.</span></p></div><div class="footer-right"><p class="mb-0"> Powered by <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> with <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme.</p></div></div></footer></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><h4 class="text-muted mb-4">Trending Tags</h4><a class="post-tag" href="/tags/languages/">Languages</a> <a class="post-tag" href="/tags/web/">web</a> <a class="post-tag" href="/tags/networking/">networking</a> <a class="post-tag" href="/tags/malware-analysis/">Malware analysis</a> <a class="post-tag" href="/tags/mobile/">mobile</a> <a class="post-tag" href="/tags/ai/">AI</a> <a class="post-tag" href="/tags/intro/">intro</a> <a class="post-tag" href="/tags/java/">java</a> <a class="post-tag" href="/tags/linux/">linux</a> <a class="post-tag" href="/tags/llm/">LLM</a></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a> <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.7.3/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="https://www.sahilsinghrawat.com{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5">Oops! No result founds.</p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script> <script async src="https://cdn.jsdelivr.net/combine/npm/popper.js@1.15.0,npm/bootstrap@4/dist/js/bootstrap.min.js"></script> <script defer src="/app.js"></script> <script defer src="https://www.googletagmanager.com/gtag/js?id=G-BSN8SG8EQW"></script> <script> document.addEventListener("DOMContentLoaded", function(event) { window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-BSN8SG8EQW'); }); </script> <script src="https://cdn.jsdelivr.net/combine/npm/lozad/dist/lozad.min.js,npm/magnific-popup@1/dist/jquery.magnific-popup.min.js"></script> <script defer src="/assets/js/dist/post.min.js"></script>

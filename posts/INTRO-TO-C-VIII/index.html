@@ -1,0 +1,187 @@
+<!DOCTYPE html><html lang="en-US" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="generator" content="Jekyll v4.4.1" /><meta property="og:title" content="Intro To C : Part VIII (Strings)" /><meta property="og:locale" content="en_US" /><meta name="description" content="Exploring System Internals and the Mechanics of Software Security." /><meta property="og:description" content="Exploring System Internals and the Mechanics of Software Security." /><link rel="canonical" href="https://www.sahilsinghrawat.com/posts/INTRO-TO-C-VIII/" /><meta property="og:url" content="https://www.sahilsinghrawat.com/posts/INTRO-TO-C-VIII/" /><meta property="og:site_name" content="Sahil Rawat" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2021-07-09T13:39:50+05:30" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="Intro To C : Part VIII (Strings)" /><meta name="twitter:site" content="@sahil_s_rawat" /><meta name="google-site-verification" content="google_meta_tag_verification" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-03-18T20:19:13+05:30","datePublished":"2021-07-09T13:39:50+05:30","description":"Exploring System Internals and the Mechanics of Software Security.","headline":"Intro To C : Part VIII (Strings)","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.sahilsinghrawat.com/posts/INTRO-TO-C-VIII/"},"url":"https://www.sahilsinghrawat.com/posts/INTRO-TO-C-VIII/"}</script><title>Intro To C : Part VIII (Strings) | Sahil Rawat</title><link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="Sahil Rawat"><meta name="application-name" content="Sahil Rawat"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://fonts.gstatic.com"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin="use-credentials"><link rel="dns-prefetch" href="https://www.google-analytics.com"><link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css"><link rel="stylesheet" href="/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.min.css"> <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script><body data-spy="scroll" data-target="#toc"><div id="sidebar" class="d-flex flex-column align-items-end"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/" alt="avatar" class="mx-auto"> <img src="https://github.com/sahil-rawat/assets/blob/master/IMG/avatar.jpeg?raw=true" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title mt-3"> <a href="/">Sahil Rawat</a></div><div class="site-subtitle font-italic">Systems & Security</div></div><ul class="w-100"><li class="nav-item"> <a href="/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>HOME</span> </a><li class="nav-item"> <a href="/about/" class="nav-link"> <i class="fa-fw fas fa-info ml-xl-3 mr-xl-3 unloaded"></i> <span>ABOUT</span> </a><li class="nav-item"> <a href="/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>ARCHIVES</span> </a><li class="nav-item"> <a href="/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>CATEGORIES</span> </a><li class="nav-item"> <a href="/tags/" class="nav-link"> <i class="fa-fw fas fa-tags ml-xl-3 mr-xl-3 unloaded"></i> <span>TAGS</span> </a><li class="nav-item"> <a href="/disclaimer/" class="nav-link"> <i class="fa-fw fas fa-warning ml-xl-3 mr-xl-3 unloaded"></i> <span>DISCLAIMER</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center"> <a href="https://github.com/sahil-rawat" aria-label="github" class="order-3" target="_blank" rel="noopener"> <i class="fab fa-github-alt"></i> </a> <a href="https://twitter.com/sahil_s_rawat" aria-label="twitter" class="order-4" target="_blank" rel="noopener"> <i class="fab fa-twitter"></i> </a> <a href=" javascript:location.href = 'mailto:' + ['sahil','sahilsinghrawat.com'].join('@')" aria-label="email" class="order-5" > <i class="fas fa-envelope"></i> </a> <a href="https://www.linkedin.com/in/sahil-singh-rawat" aria-label="linkedin" class="order-6" target="_blank" rel="noopener"> <i class="fab fa-linkedin"></i> </a> <span class="icon-border order-2"></span> <span id="mode-toggle-wrapper" class="order-1"> <i class="mode-toggle fas fa-adjust"></i> <script type="text/javascript"> class ModeToggle { static get MODE_KEY() { return "mode"; } static get DARK_MODE() { return "dark"; } static get LIGHT_MODE() { return "light"; } constructor() { if (this.hasMode) { if (this.isDarkMode) { if (!this.isSysDarkPrefer) { this.setDark(); } } else { if (this.isSysDarkPrefer) { this.setLight(); } } } var self = this; /* always follow the system prefers */ this.sysDarkPrefers.addListener(function() { if (self.hasMode) { if (self.isDarkMode) { if (!self.isSysDarkPrefer) { self.setDark(); } } else { if (self.isSysDarkPrefer) { self.setLight(); } } self.clearMode(); } self.updateMermaid(); }); } /* constructor() */ setDark() { $('html').attr(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); } setLight() { $('html').attr(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); } clearMode() { $('html').removeAttr(ModeToggle.MODE_KEY); sessionStorage.removeItem(ModeToggle.MODE_KEY); } get sysDarkPrefers() { return window.matchMedia("(prefers-color-scheme: dark)"); } get isSysDarkPrefer() { return this.sysDarkPrefers.matches; } get isDarkMode() { return this.mode == ModeToggle.DARK_MODE; } get isLightMode() { return this.mode == ModeToggle.LIGHT_MODE; } get hasMode() { return this.mode != null; } get mode() { return sessionStorage.getItem(ModeToggle.MODE_KEY); } /* get the current mode on screen */ get modeStatus() { if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer) ) { return ModeToggle.DARK_MODE; } else { return ModeToggle.LIGHT_MODE; } } updateMermaid() { if (typeof mermaid !== "undefined") { let expectedTheme = (this.modeStatus === ModeToggle.DARK_MODE? "dark" : "default"); let config = { theme: expectedTheme }; /* re-render the SVG › <https://github.com/mermaid-js/mermaid/issues/311#issuecomment-332557344> */ $(".mermaid").each(function() { let svgCode = $(this).prev().children().html(); $(this).removeAttr("data-processed"); $(this).html(svgCode); }); mermaid.initialize(config); mermaid.init(undefined, ".mermaid"); } } flipMode() { if (this.hasMode) { if (this.isSysDarkPrefer) { if (this.isLightMode) { this.clearMode(); } else { this.setLight(); } } else { if (this.isDarkMode) { this.clearMode(); } else { this.setDark(); } } } else { if (this.isSysDarkPrefer) { this.setLight(); } else { this.setDark(); } } this.updateMermaid(); } /* flipMode() */ } /* ModeToggle */ let toggle = new ModeToggle(); $(".mode-toggle").click(function() { toggle.flipMode(); }); </script> </span></div></div><div id="topbar-wrapper" class="row justify-content-center topbar-down"><div id="topbar" class="col-11 d-flex h-100 align-items-center justify-content-between"> <span id="breadcrumb"> <span> <a href="/"> Posts </a> </span> <span>Intro To C : Part VIII (Strings)</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> Post</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="Search..."> <i class="fa fa-times-circle fa-fw" id="search-cleaner"></i> </span> <span id="search-cancel" >Cancel</span></div></div><div id="main-wrapper"><div id="main"><div class="row"><div id="post-wrapper" class="col-12 col-lg-11 col-xl-8"><div class="post pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><h1 data-toc-skip>Intro To C : Part VIII (Strings)</h1><div class="post-meta text-muted d-flex flex-column"><div> <span class="semi-bold"> Sahil Singh Rawat </span> <span class="timeago " data-toggle="tooltip" data-placement="bottom" title="Fri, Jul 9, 2021, 1:39 PM +0530" prep="on" > Jul 9, 2021 <i class="unloaded">2021-07-09T13:39:50+05:30</i> </span></div><div> <span> <span class="timeago lastmod" data-toggle="tooltip" data-placement="bottom" title="Wed, Mar 18, 2026, 8:19 PM +0530" prefix="Updated " > Mar 18 <i class="unloaded">2026-03-18T20:19:13+05:30</i> </span> </span> <span class="readtime" data-toggle="tooltip" data-placement="bottom" title="1224 words">6 min</span></div></div><div class="post-content"><p><img data-proofer-ignore data-src="https://github.com/sahil-rawat/assets/blob/master/IMG/MAIN3.jpg?raw=true" alt="" /></p><p>This is the eighth post in the series <a href="https://www.sahilsinghrawat.com/posts/INTRO-TO-C-I/">Intro To C</a> In the last post we learned Arrays</p><p>In this article, we will learn about Strings</p><h2 id="strings">Strings</h2><p>Well, turns out strings aren’t strings in C. That’s right! They’re pointers! Much like arrays, strings in C <em>barely exist</em>.</p><h3 id="constant-strings">Constant Strings</h3><p>Before we start, let’s talk about constant strings in C. These are sequences of characters in <em>double</em> quotes (“).</p><p>Examples:</p><div lang="plaintext" class="language-plaintext highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre>"Hello, world!\n"
+"This is a test."
+"To use quotes inside a string we need to it escape them, \" like so.\" "
+</pre></table></code></div></div><p>The first one has a newline at the end quite a common thing to see.</p><p>The last one has quotes embedded within it, but you see each is preceded by (we say “escaped by”) a backslash () indicating that a literal quote belongs in the string at this point. This is how the C compiler can tell the difference between printing a double quote and the double quote at the end of the string.</p><h3 id="string-variables">String Variables</h3><p>Now that we know how to make a constant string, let’s assign it to a variable so we can do something with it.</p><div lang="c" class="language-c highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre> <span class="kt">char</span> <span class="o">*</span><span class="n">s</span> <span class="o">=</span> <span class="s">"Hello, world!"</span><span class="p">;</span>
+</pre></table></code></div></div><p>Check out that type: pointer to a char. The string variable s is a pointer to the first character in that string, namely the H. And we can print it with the %s (for “string”) format specifier:</p><div lang="c" class="language-c highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre><span class="kt">char</span> <span class="o">*</span><span class="n">s</span> <span class="o">=</span> <span class="s">"Hello, world!"</span><span class="p">;</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"%s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span> <span class="c1">// "Hello, world!"</span>
+</pre></table></code></div></div><h3 id="string-variables-as-arrays">String Variables as Arrays</h3><p>Another option is this, equivalent to the above char* usage:</p><div lang="c" class="language-c highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre><span class="kt">char</span> <span class="n">s</span><span class="p">[</span><span class="mi">14</span><span class="p">]</span> <span class="o">=</span> <span class="s">"Hello, world!"</span><span class="p">;</span>  
+
+<span class="c1">//or </span>
+
+<span class="kt">char</span> <span class="n">s</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"Hello, world!"</span><span class="p">;</span>
+</pre></table></code></div></div><p>This means you can use array notation to access characters in a string. Let’s do exactly that to print all the characters in a string:</p><div lang="c" class="language-c highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre><td class="rouge-code"><pre><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">char</span> <span class="n">s</span><span class="p">[]</span> <span class="o">=</span><span class="s">"Hello World!"</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">13</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"%c</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>Note that we’re using the format specifier %c to print a single character.</p><p>Also, check this out. The program will still work fine if we change the definition of s to be a char* type:</p><div lang="c" class="language-c highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre><td class="rouge-code"><pre><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">char</span> <span class="o">*</span><span class="n">s</span> <span class="o">=</span><span class="s">"Hello World!"</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">13</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"%c</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>And we still can use array notation to get the job done when printing it out!</p><p>This is yet another hint that arrays and pointers are the same things, deep down.</p><h3 id="string-initialisers">String Initialisers</h3><p>We’ve already seen some examples with initializing string variables with constant strings:</p><div lang="c" class="language-c highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre><span class="kt">char</span> <span class="o">*</span><span class="n">s</span> <span class="o">=</span> <span class="s">"Hello, world!"</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">t</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"Hello, again!"</span><span class="p">;</span>
+</pre></table></code></div></div><p>But these two are subtly different. The following one is a pointer to a constant string (i.e. a pointer to the first character in a constant string):</p><div lang="c" class="language-c highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre><span class="kt">char</span> <span class="o">*</span><span class="n">s</span> <span class="o">=</span> <span class="s">"Hello, world!"</span><span class="p">;</span>
+
+<span class="c1">// If you try to mutate it</span>
+
+<span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="sc">'z'</span><span class="p">;</span>  <span class="c1">// BAD NEWS: tried to mutate a constant string!</span>
+</pre></table></code></div></div><p>The behavior is undefined. Probably, depending on your system, a crash will result.</p><p>But declaring it as an array is different. The following one is a non-constant, mutable <em>copy</em> of the constant string that we can change.</p><div lang="c" class="language-c highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre><span class="kt">char</span> <span class="n">t</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"Hello, again!"</span><span class="p">;</span> <span class="c1">// t is an array copy of the string</span>
+<span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="sc">'z'</span><span class="p">;</span> <span class="c1">// No problem*</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"%s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">t</span><span class="p">);</span> <span class="c1">// "zello, again!"</span>
+</pre></table></code></div></div><h3 id="getting-string-length">Getting String Length</h3><p>C dosen’t track the length of the string however, There’s a function in <string.h> called strlen() that can be used to compute the length of any string.</string.h></p><div lang="c" class="language-c highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre><td class="rouge-code"><pre><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;string.h&gt;</span><span class="cp">
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="kt">char</span> <span class="o">*</span><span class="n">s</span> <span class="o">=</span> <span class="s">"Hello, world!"</span><span class="p">;</span>
+	
+	<span class="n">printf</span><span class="p">(</span><span class="s">"The string is %zu characters long.</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">strlen</span><span class="p">(</span><span class="n">s</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>The strlen() function returns type size_t, which is an integer type so you can use it for integer math. We print size_t with %zu.</p><p>So it <em>is</em> possible to get the string length! But… if C doesn’t track the length of the string anywhere, how does it know how long the string is</p><h3 id="string-termination">String Termination</h3><p>C does strings a little differently than many programming languages, and differently than almost every modern programming language.</p><p>When you’re making a new language, you have two options for storing a string in memory:</p><ol><li>Store the bytes of the string along with a number indicating the length of the string.<li>Store the bytes of the string, and mark the end of the string with a special byte called the <em>terminator</em>.</ol><p>If you want strings longer than 255 characters, option 1 requires at least two bytes to store the length. Whereas option 2 only requires one byte to terminate the string. So a bit of saving there.</p><p>In C, a “string” is defined by two basic characteristics:</p><ul><li>A pointer to the first character in the string.<li>A zero-valued byte (or NULL character) somewhere in memory after the pointer that indicates the end of the string</ul><p>A NULL character can be written in C code as \0, though you don’t often have to do this. When you include a constant string in your code, the NULL character is automatically, implicitly included</p><div lang="c" class="language-c highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre><span class="kt">char</span> <span class="o">*</span><span class="n">s</span> <span class="o">=</span> <span class="s">"Hello!"</span><span class="p">;</span> <span class="c1">// Actually "Hello!\0" behind the scenes</span>
+</pre></table></code></div></div><p>So with this in mind, let’s write our strlen() function that counts characters in a string until it finds a NULL. The procedure is to look down the string for a single NULL character, counting as we go:</p><div lang="c" class="language-c highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre><td class="rouge-code"><pre><span class="kt">int</span> <span class="nf">my_strlen</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">s</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="kt">int</span> <span class="n">count</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+	<span class="k">while</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">count</span><span class="p">]</span><span class="o">!=</span><span class="sc">'\0'</span><span class="p">){</span> <span class="c1">//Single quotes for single char</span>
+	    <span class="n">count</span><span class="o">++</span>
+	    <span class="k">return</span> <span class="n">count</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>And that’s basically how the built-in strlen() gets the job done.</p><h3 id="copying-a-string">Copying a String</h3><p>You can’t copy a string through the assignment operator (=). All that does is make a copy of the pointer to the first character… so you end up with two pointers to the same string:</p><div lang="c" class="language-c highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre><td class="rouge-code"><pre><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="kt">char</span> <span class="n">s</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"Hello, world!"</span><span class="p">;</span>
+	<span class="kt">char</span> <span class="o">*</span><span class="n">t</span><span class="p">;</span>
+	<span class="n">t</span><span class="o">=</span><span class="n">s</span><span class="p">;</span> <span class="c1">// This makes a copy of the pointer, not a copy of the string!</span>
+
+	<span class="c1">// We modify t</span>
+	<span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="sc">'z'</span>
+
+	<span class="n">printf</span><span class="p">(</span><span class="s">"%s"</span><span class="p">,</span><span class="n">s</span><span class="p">)</span> <span class="c1">//zello world!</span>
+<span class="p">}</span>
+
+</pre></table></code></div></div><p>If you want to make a copy of a string, you have to copy it a byte at a time but this is made easier with the strcpy() function.</p><p>Before you copy the string, make sure you have room to copy it into, i.e. the destination array that’s going to hold the characters needs to be at least as long as the string you’re copying.</p><div lang="c" class="language-c highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+</pre><td class="rouge-code"><pre><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;string.h&gt;</span><span class="cp">
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">char</span> <span class="n">s</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"Hello, world!"</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">t</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span> <span class="c1">// Each char is one byte, so plenty of room</span>
+
+    <span class="c1">// This makes a copy of the string!</span>
+    <span class="n">strcpy</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span>
+
+    <span class="c1">// We modify t</span>
+    <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="sc">'z'</span><span class="p">;</span>
+	
+    <span class="c1">// And s remains unaffected because it's a different string</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span> <span class="c1">// "Hello, world!"</span>
+
+    <span class="c1">// But t has been changed</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">t</span><span class="p">);</span> <span class="c1">// "zello, world!"*</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>Notice with strcpy(), the destination pointer is the first argument, and the source pointer is the second.</p><hr /><p>Thanks for Reading, Stay tuned for more ❤︎</p><p>If you enjoyed reading the article do follow me on:</p><p><a href="https://twitter.com/sahil_s_rawat">Twitter</a></p><p><a href="https://www.linkedin.com/in/sahil-singh-rawat">LinkedIn</a></p><p><a href="https://www.sahilsinghrawat.com">Website</a></p><p><a href="https://github.com/sahil-rawat">GitHub</a></p></div><div class="post-tail-wrapper text-muted"><div class="post-meta mb-3"> <i class="far fa-folder-open fa-fw mr-1"></i> <a href='/categories/languages/'>Languages</a>, <a href='/categories/c/'>C</a></div><div class="post-tags"> <i class="fa fa-tags fa-fw mr-1"></i> <a href="/tags/languages/" class="post-tag no-text-decoration" >Languages</a></div><div class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"><div class="license-wrapper"> This post is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> by the author.</div><div class="share-wrapper"> <span class="share-label text-muted mr-1">Share</span> <span class="share-icons"> <a href="https://twitter.com/intent/tweet?text=Intro To C : Part VIII (Strings) - Sahil Rawat&url=https://www.sahilsinghrawat.com/posts/INTRO-TO-C-VIII/" data-toggle="tooltip" data-placement="top" title="Twitter" target="_blank" rel="noopener" aria-label="Twitter"> <i class="fa-fw fab fa-twitter"></i> </a> <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.sahilsinghrawat.com/posts/INTRO-TO-C-VIII/" data-toggle="tooltip" data-placement="top" title="Linkedin" target="_blank" rel="noopener" aria-label="Linkedin"> <i class="fa-fw fab fa-linkedin"></i> </a> <i class="fa-fw fas fa-link small" onclick="copyLink()" data-toggle="tooltip" data-placement="top" title="Copy link"></i> </span></div></div></div></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted topbar-down"><div class="access"><div id="access-lastmod" class="post"> <span>Recent Update</span><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li><a href="/posts/IDOR/">Everything you need to know about IDOR</a><li><a href="/posts/SSRF/">Beginners Guide to SSRF</a><li><a href="/posts/LFD/">Beginners Guide to LFD</a><li><a href="/posts/SQL-Injection/">Intro to SQL Injection</a><li><a href="/posts/XXE/">XXE:XML External Entity</a></ul></div><div id="access-tags"> <span>Trending Tags</span><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/languages/">Languages</a> <a class="post-tag" href="/tags/web/">web</a> <a class="post-tag" href="/tags/networking/">networking</a> <a class="post-tag" href="/tags/malware-analysis/">Malware analysis</a> <a class="post-tag" href="/tags/mobile/">mobile</a> <a class="post-tag" href="/tags/ai/">AI</a> <a class="post-tag" href="/tags/intro/">intro</a> <a class="post-tag" href="/tags/java/">java</a> <a class="post-tag" href="/tags/linux/">linux</a> <a class="post-tag" href="/tags/llm/">LLM</a></div></div></div><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script><div id="toc-wrapper" class="pl-0 pr-4 mb-5"> <span class="pl-3 pt-2 mb-2">Contents</span><nav id="toc" data-toggle="toc"></nav></div></div></div><div class="row"><div class="col-12 col-lg-11 col-xl-8"><div id="post-extend-wrapper" class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><div id="related-posts" class="mt-5 mb-2 mb-sm-4"><h3 class="pt-2 mt-1 mb-4 ml-1" data-toc-skip>Further Reading</h3><div class="card-deck mb-4"><div class="card"> <a href="/posts/INTRO-TO-C-I/"><div class="card-body"> <span class="timeago small" > Jul 3, 2021 <i class="unloaded">2021-07-03T13:39:50+05:30</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>Intro To C : Part I (Introduction)</h3><div class="text-muted small"><p> To get started in the field of CyberSecurity or specifically Reverse Engineering. The knowledge of C language will help a lot, It’s not that Learning C is compulsory but it helps in understanding...</p></div></div></a></div><div class="card"> <a href="/posts/INTRO-TO-C-II/"><div class="card-body"> <span class="timeago small" > Jul 4, 2021 <i class="unloaded">2021-07-04T13:39:50+05:30</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>Intro To C : Part II (Variables)</h3><div class="text-muted small"><p> This is the second post in the series Intro To C In the last post we introduced C language while going through a demo HelloWorld program and how to compile and build a C program. In this article...</p></div></div></a></div><div class="card"> <a href="/posts/INTRO-TO-C-III/"><div class="card-body"> <span class="timeago small" > Jul 4, 2021 <i class="unloaded">2021-07-04T13:39:50+05:30</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>Intro To C : Part III (Operators)</h3><div class="text-muted small"><p> This is the third post in the series Intro To C In the last post we peeked into variables and data types in C language. In this article, we will learn about Operators and Expressions in the C la...</p></div></div></a></div></div></div><div class="post-navigation d-flex justify-content-between"> <a href="/posts/INTRO-TO-C-VII/" class="btn btn-outline-primary" prompt="Older"><p>Intro To C : Part VII (Arrays)</p></a> <a href="/posts/INTRO-TO-C-IX/" class="btn btn-outline-primary" prompt="Newer"><p>Intro To C : Part IX (Structs)</p></a></div></div></div></div><footer class="d-flex w-100 justify-content-center"><div class="d-flex justify-content-between align-items-center"><div class="footer-left"><p class="mb-0"> © 2026 <a href="https://twitter.com/sahil__rawat">Sahil Singh Rawat</a>. <span data-toggle="tooltip" data-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.">Some rights reserved.</span></p></div><div class="footer-right"><p class="mb-0"> Powered by <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> with <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme.</p></div></div></footer></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><h4 class="text-muted mb-4">Trending Tags</h4><a class="post-tag" href="/tags/languages/">Languages</a> <a class="post-tag" href="/tags/web/">web</a> <a class="post-tag" href="/tags/networking/">networking</a> <a class="post-tag" href="/tags/malware-analysis/">Malware analysis</a> <a class="post-tag" href="/tags/mobile/">mobile</a> <a class="post-tag" href="/tags/ai/">AI</a> <a class="post-tag" href="/tags/intro/">intro</a> <a class="post-tag" href="/tags/java/">java</a> <a class="post-tag" href="/tags/linux/">linux</a> <a class="post-tag" href="/tags/llm/">LLM</a></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a> <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.7.3/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="https://www.sahilsinghrawat.com{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5">Oops! No result founds.</p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script> <script async src="https://cdn.jsdelivr.net/combine/npm/popper.js@1.15.0,npm/bootstrap@4/dist/js/bootstrap.min.js"></script> <script defer src="/app.js"></script> <script defer src="https://www.googletagmanager.com/gtag/js?id=G-BSN8SG8EQW"></script> <script> document.addEventListener("DOMContentLoaded", function(event) { window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-BSN8SG8EQW'); }); </script> <script src="https://cdn.jsdelivr.net/combine/npm/lozad/dist/lozad.min.js,npm/magnific-popup@1/dist/jquery.magnific-popup.min.js"></script> <script defer src="/assets/js/dist/post.min.js"></script>
