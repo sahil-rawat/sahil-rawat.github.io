@@ -12,9 +12,9 @@ Open Redirect also known as Unvalidated redirects and forwards is a very common 
 
 For example, suppose I utilize the following URL to redirect users to my projects website:
 
-```https://www.sahilsinghrawat.in?redirect=https://projects.sahilsinghrawat.in```
+```https://www.sahilsinghrawat.com?redirect=https://projects.sahilsinghrawat.com```
 
-Visiting this URL, The server would receive a GET HTTP request and use the redirect parameter to decide where the user is to be redirected, Then the server would send a 302 HTTP response, instructing the user's browser to make a GET request to *https://projects.sahilsinghrawat.in*
+Visiting this URL, The server would receive a GET HTTP request and use the redirect parameter to decide where the user is to be redirected, Then the server would send a 302 HTTP response, instructing the user's browser to make a GET request to *https://projects.sahilsinghrawat.com*
 
 Now, suppose the attacker changed the original URL to:
 
@@ -60,7 +60,7 @@ we need to find this by trial and error method, say if we type any other domian 
 
 There is a way to Bypass this every 💡
 
-Browsers has functionality that if we would type, any domain and a “@” and then the website we want to go to after it, then the  browser will redirect to the website after “@”, you can try it by typing in your browser or click on the link *[http://www.anydomain.com@www.sahilsinghrawat.in](http://www.google.com@www.sahilsinghrawat.in)* you will be redirected to my website, Following this, we could redirect the user by a link like *http://examplesite.com/?redirect=http://home.examplesite.com@www.sahilsinghrawat.in*
+Browsers has functionality that if we would type, any domain and a “@” and then the website we want to go to after it, then the  browser will redirect to the website after “@”, you can try it by typing in your browser or click on the link *[http://www.anydomain.com@www.sahilsinghrawat.com](http://www.google.com@www.sahilsinghrawat.com)* you will be redirected to my website, Following this, we could redirect the user by a link like *http://examplesite.com/?redirect=http://home.examplesite.com@www.sahilsinghrawat.com*
 
 ## 🧠 Real-World Scenario (OAuth Abuse)
 
@@ -99,6 +99,6 @@ If you enjoyed reading the article do follow me on:
 
 [LinkedIn](https://www.linkedin.com/in/sahil-singh-rawat)
 
-[Website](https://www.sahilsinghrawat.in)
+[Website](https://www.sahilsinghrawat.com)
 
 [GitHub](https://github.com/sahil-rawat)

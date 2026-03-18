@@ -6,7 +6,7 @@ order: 5
 
 Important: Educational and Ethical Use Only
 
-The content provided on www.sahilsinghrawat.in is for educational and informational purposes only. My goal is to share knowledge regarding Ethical Hacking, Cybersecurity research, and Software Development to help professionals and enthusiasts build more secure systems.
+The content provided on www.sahilsinghrawat.com is for educational and informational purposes only. My goal is to share knowledge regarding Ethical Hacking, Cybersecurity research, and Software Development to help professionals and enthusiasts build more secure systems.
 
 1. No Illegal Use All tutorials and research are conducted in controlled environments (my own servers, lab networks, and authorized platforms). I do not promote, encourage, or support any illegal activities. If you intend to use the information provided here for unauthorized or malicious purposes, please leave this site immediately.
 

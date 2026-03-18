@@ -30,7 +30,7 @@ The HTTP request which the browser sent will look something like this ⬇️:
 
 ```HTTP
 GET /  HTTP/1.1 /
-Host: https://sahilsinghrawat.in
+Host: https://sahilsinghrawat.com
 User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:50.0) Gecko/20100101 Firefox/50.0
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*,q=0.8
 Authorization: Bearer Something_Here
@@ -149,6 +149,6 @@ If you enjoyed reading the article do follow me on:
 
 [LinkedIn](https://www.linkedin.com/in/sahil-singh-rawat)
 
-[Website](https://www.sahilsinghrawat.in)
+[Website](https://www.sahilsinghrawat.com)
 
 [GitHub](https://github.com/sahil-rawat)

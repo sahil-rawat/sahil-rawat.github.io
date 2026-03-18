@@ -6,7 +6,7 @@ tags: [Languages]
 ---
 ![](https://github.com/sahil-rawat/assets/blob/master/IMG/MAIN7.jpg?raw=true)
 
-This is the fourth post in the series [Intro To C](https://www.sahilsinghrawat.in/posts/INTRO-TO-C-I/) In the last post we learned about various operators in C Language
+This is the fourth post in the series [Intro To C](https://www.sahilsinghrawat.com/posts/INTRO-TO-C-I/) In the last post we learned about various operators in C Language
 
 In this article, we will learn about Flow Control Statements in the C language
 
@@ -307,6 +307,6 @@ If you enjoyed reading the article do follow me on:
 
 [LinkedIn](https://www.linkedin.com/in/sahil-singh-rawat)
 
-[Website](https://www.sahilsinghrawat.in)
+[Website](https://www.sahilsinghrawat.com)
 
 [GitHub](https://github.com/sahil-rawat)

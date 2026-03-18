@@ -23,7 +23,7 @@ description: >-                        # used by seo meta and the atom feed
   Exploring System Internals and the Mechanics of Software Security.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: 'https://www.sahilsinghrawat.in'
+url: 'https://www.sahilsinghrawat.com'
 
 github:
   username: sahil-rawat             # change to your github username
@@ -38,7 +38,7 @@ social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
   name: Sahil Singh Rawat
-  email: sahil@sahilsinghrawat.in             # change to your email address
+  email: sahil@sahilsinghrawat.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
     - https://twitter.com/sahil__rawat      # change to your twitter homepage

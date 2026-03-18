@@ -6,7 +6,7 @@ tags: [networking]
 ---
 ![](https://github.com/sahil-rawat/assets/blob/master/IMG/MAIN10.jpg?raw=true)
 
-We learned about Pre-Authentication attacks in the last [tutorial](https://www.sahilsinghrawat.in/posts/NET-HACKING1), now moving forward in this article we will explore techniques of Gaining access to that network.
+We learned about Pre-Authentication attacks in the last [tutorial](https://www.sahilsinghrawat.com/posts/NET-HACKING1), now moving forward in this article we will explore techniques of Gaining access to that network.
 
 To gain access to a network we need to know the password or key, we will discuss the methods of how we could get the password or key of the network so that we can connect ourselves to that network without anybody noticing.
 
@@ -149,7 +149,7 @@ airodump-ng --bssid <MAC:OF:ROUTER> --channel <Ch. No.> --write <filename>
 
 here the **--bssid** option is to specify MAC of the router, **--channel** to specify channel number, and **--write** to save the output to.
 
-We need to keep it running and wait for the handshakes to be captured. The ```airodump-ng``` will show that the handshake is captured, and if there aren't any new devices to join we can perform the Deauth Attack as discussed in [last post](https://www.sahilsinghrawat.in/posts/NET-HACKING1) to disconnect a client and when the client reconnects the handshake will be sent and would be captured.
+We need to keep it running and wait for the handshakes to be captured. The ```airodump-ng``` will show that the handshake is captured, and if there aren't any new devices to join we can perform the Deauth Attack as discussed in [last post](https://www.sahilsinghrawat.com/posts/NET-HACKING1) to disconnect a client and when the client reconnects the handshake will be sent and would be captured.
 
 ```bash
 aireplay-ng --deauth 4 -a 00:MAC:OF:ROUTER:11 -c 00:MAC:OF:CLIENT:11 wlan0
@@ -226,6 +226,6 @@ If you enjoyed reading the article do follow me on:
 
 [LinkedIn](https://www.linkedin.com/in/sahil-singh-rawat)
 
-[Website](https://www.sahilsinghrawat.in)
+[Website](https://www.sahilsinghrawat.com)
 
 [GitHub](https://github.com/sahil-rawat)

@@ -57,7 +57,7 @@ User-Agent: *
 
 Allow: /
 
-sitemap: https://sahilsinghrawat.in/sitemap.xml
+sitemap: https://sahilsinghrawat.com/sitemap.xml
 ```
 
 Lets understand different keywords:
@@ -235,6 +235,6 @@ If you enjoyed reading the article do follow me on:
 
 [LinkedIn](https://www.linkedin.com/in/sahil-singh-rawat)
 
-[Website](https://www.sahilsinghrawat.in)
+[Website](https://www.sahilsinghrawat.com)
 
 [GitHub](https://github.com/sahil-rawat)

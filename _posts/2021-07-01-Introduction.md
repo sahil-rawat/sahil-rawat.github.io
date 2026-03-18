@@ -24,5 +24,5 @@ I hope you find these posts useful and perhaps learn something new along the way
 
 ### Let's Connect
 If you want to chat about security, dev work, or just say hi:
-* 📧 **Email:** [sahil@sahilsinghrawat.in](mailto:sahil@sahilsinghrawat.in)
+* 📧 **Email:** [sahil@sahilsinghrawat.com](mailto:sahil@sahilsinghrawat.com)
 * 🐦 **Twitter:** [@sahil_s_rawat](https://twitter.com/sahil_s_rawat)

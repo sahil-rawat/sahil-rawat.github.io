@@ -6,7 +6,7 @@ tags: [Languages]
 ---
 ![](https://github.com/sahil-rawat/assets/blob/master/IMG/MAIN3.jpg?raw=true)
 
-This is the fifth post in the series [Intro To C](https://www.sahilsinghrawat.in/posts/INTRO-TO-C-I/) In the last post we learned about Flow Control Statements
+This is the fifth post in the series [Intro To C](https://www.sahilsinghrawat.com/posts/INTRO-TO-C-I/) In the last post we learned about Flow Control Statements
 
 In this article, we will learn a little bit about Functions
 
@@ -124,6 +124,6 @@ If you enjoyed reading the article do follow me on:
 
 [LinkedIn](https://www.linkedin.com/in/sahil-singh-rawat)
 
-[Website](https://www.sahilsinghrawat.in)
+[Website](https://www.sahilsinghrawat.com)
 
 [GitHub](https://github.com/sahil-rawat)

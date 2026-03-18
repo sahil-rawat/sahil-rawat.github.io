@@ -8,7 +8,7 @@ tags: [AI, LLM, OWASP]
 
 It feels like we are watching history repeat itself.
 
-Remember the late 90s? When everyone scrambled to move from desktop apps to the web, we didn't just get cool new websites, we got new nightmares like [SQL Injection](https://www.sahilsinghrawat.in/posts/SQL-Injection/) and [XSS](https://www.sahilsinghrawat.in/posts/XSS/). Today, with the explosion of Generative AI, we are standing on that same ledge.
+Remember the late 90s? When everyone scrambled to move from desktop apps to the web, we didn't just get cool new websites, we got new nightmares like [SQL Injection](https://www.sahilsinghrawat.com/posts/SQL-Injection/) and [XSS](https://www.sahilsinghrawat.com/posts/XSS/). Today, with the explosion of Generative AI, we are standing on that same ledge.
 
 Right now, almost every developer I know is racing to plug GPT-4 or Claude into their apps. It’s exciting, but let’s be honest in our rush to ship "AI features" we are connecting incredibly powerful engines to untrusted user input often **without checking if the brakes actually work.**
 
@@ -191,6 +191,6 @@ If you enjoyed reading the article do follow me on:
 
 [LinkedIn](https://www.linkedin.com/in/sahil-singh-rawat)
 
-[Website](https://www.sahilsinghrawat.in)
+[Website](https://www.sahilsinghrawat.com)
 
 [GitHub](https://github.com/sahil-rawat)

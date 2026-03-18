@@ -15,4 +15,4 @@ I actively participate in various hackathons, CTFs and I am also an active playe
 
 I’m a firm believer in "learning in public." I hope my documentation helps you as much as it helps me. Feedback is always welcome!
 
-📫 Connect with me: @sahil_s_rawat [sahil@sahilsinghrawat.in](mailto:sahil@sahilsinghrawat.in) | 🐦 Twitter: [sahil_s_rawat](https://twitter.com/sahil_s_rawat)
+📫 Connect with me: @sahil_s_rawat [sahil@sahilsinghrawat.com](mailto:sahil@sahilsinghrawat.com) | 🐦 Twitter: [sahil_s_rawat](https://twitter.com/sahil_s_rawat)
